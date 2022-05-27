@@ -75,7 +75,11 @@ export default function Home() {
       .flat()
       .forEach((f) => {
         console.log(`resetting ${f.title} from ${f.value} to ${f.defaultValue}`)
-        f.value = f.defaultValue
+        if (f.type == "text") {
+          f.value = ""
+        } else {
+          f.value = f.defaultValue
+        }
       })
 
     setFormData(currentData)

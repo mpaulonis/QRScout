@@ -265,7 +265,8 @@
           "type": "text",
           "min": 0,
           "max": 50,
-          "required": false
+          "required": false,
+          "placeholder": "What was noteworthy or unusual about this performance?"
         }
       ]
     }
