@@ -67,6 +67,7 @@
             "middle": "Middle",
             "right": "Right"
           },
+          "defaultValue": "left",
           "required": false,
           "code": "autoStart"
         },
@@ -79,7 +80,7 @@
         },
         {
           "code": "au",
-          "title": "Upper Cargo Scored",
+          "title": "Auto Upper Cargo Scored",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -87,7 +88,7 @@
         },
         {
           "code": "aum",
-          "title": "Upper Cargo Missed",
+          "title": "Auto Upper Cargo Missed",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -95,7 +96,7 @@
         },
         {
           "code": "al",
-          "title": "Lower Cargo Scored",
+          "title": "Auto Lower Cargo Scored",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -103,7 +104,7 @@
         },
         {
           "code": "alm",
-          "title": "Lower Cargo Missed",
+          "title": "Auto Lower Cargo Missed",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,

@@ -9,6 +9,9 @@ import {
 import QRModal from '../components/QRModal'
 import Section from '../components/Section'
 import Button, { Variant } from '../components/core/Button'
+import SheetWrite from '../components/spreadsheet'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function buildConfig(c: Config) {
   let config: Config = { ...c }
@@ -93,6 +96,14 @@ export default function Home() {
       .join('\t')
   }
 
+  function getColumnNames(): string {
+    return formData.sections
+      .map((s) => s.fields)
+      .flat()
+      .map((f) => f.title)
+      .join('\t')
+  }
+
   function download(filename: string, text: string) {
     var element = document.createElement('a')
     element.setAttribute(
@@ -139,6 +150,7 @@ export default function Home() {
       </Head>
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-4 text-center">
+        <ToastContainer />
         <h1 className="font-sans text-6xl font-bold">
           <div className="text-red-600">{formData.page_title}</div>
         </h1>
@@ -164,12 +176,20 @@ export default function Home() {
 
             <div className="mb-4 flex flex-col justify-center rounded bg-white shadow-md">
               <button
-                className="focus:shadow-outline mx-2 rounded bg-gray-700 py-6 px-6 font-bold uppercase text-white hover:bg-gray-700 focus:shadow-lg focus:outline-none disabled:bg-gray-300"
+                className="focus:shadow-outline m-2 rounded bg-gray-500 py-6 px-6 font-bold text-white hover:bg-gray-700 focus:shadow-lg focus:outline-none disabled:bg-gray-300"
                 type="button"
                 onClick={() => setShowQR(true)}
                 disabled={getMissingRequiredFields().length > 0}
               >
-                Commit
+                Generate QR Code
+              </button>
+              <button
+                className="focus:shadow-outline m-2 rounded bg-gray-500 py-6 px-6 font-bold text-white hover:bg-gray-700 focus:shadow-lg focus:outline-none disabled:bg-gray-300"
+                type="button"
+                onClick={() => SheetWrite(getQRCodeData(), getColumnNames())}
+                disabled={getMissingRequiredFields().length > 0}
+              >
+                Add to Google Sheet
               </button>
               <button
                 className="focus:shadow-outline mx-2 my-6 rounded border border-red-400 bg-white py-2 font-bold text-red-400 hover:bg-red-200 focus:outline-none"
