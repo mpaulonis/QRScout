@@ -27,6 +27,8 @@ export interface InputProps {
   defaultValue?: any
   min?: number
   max?: number
+  placeholder?: string
+  rows?: number
 }
 
 export type InputTypes =

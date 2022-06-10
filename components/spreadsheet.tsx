@@ -66,7 +66,7 @@ export default async function SheetWrite (dataString: string, columnNames: strin
         if (isEqual) {
             //alert('Successfully wrote row ' + rowNum + ' to the Google Sheet')
             toast.success(
-                'Successfully wrote row ' + rowNum + ' to the Google Sheet',
+                'Successfully wrote row ' + rowNum + ' to ' + doc.title,
                 {
                     theme: 'colored',
                     position: toast.POSITION.TOP_CENTER

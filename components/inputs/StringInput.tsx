@@ -4,6 +4,7 @@ import BaseInputProps from './BaseInputProps'
 export interface StringInputProps extends BaseInputProps {
   maxSize?: number
   placeholder?: string
+  rows?: number
 }
 
 export default function StringInput(data: StringInputProps) {
@@ -18,7 +19,7 @@ export default function StringInput(data: StringInputProps) {
 
   return (
     <textarea
-      className="focus:shadow-outline w-full appearance-none break-words rounded border py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none"
+      className="focus:shadow-outline w-full appearance-none break-words rounded border py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none placeholder-gray-300"
       disabled={data.disabled}
       name={`${data.title}_input`}
       id={`${data.title}_input`}
@@ -26,6 +27,7 @@ export default function StringInput(data: StringInputProps) {
       defaultValue={data.defaultValue}
       placeholder={data.placeholder}
       value={data.value}
+      rows={data.rows}
     ></textarea>
   )
 }

@@ -5,6 +5,9 @@
     "Config": {
       "type": "object",
       "properties": {
+        "$schema": {
+          "type": "string"
+        },
         "title": {
           "type": "string"
         },
@@ -75,6 +78,9 @@
         },
         "placeholder": {
           "type": "string"
+        },
+        "rows": {
+          "type": "number"
         }
       },
       "required": ["title", "type", "required", "code"],

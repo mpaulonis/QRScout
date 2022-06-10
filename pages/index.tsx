@@ -196,7 +196,7 @@ export default function Home() {
                 type="button"
                 onClick={() => resetSections()}
               >
-                Reset
+                Reset Inputs
               </button>
             </div>
             <div className="mb-4 flex flex-col justify-center rounded bg-white shadow-md">

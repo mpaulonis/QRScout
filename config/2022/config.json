@@ -5,18 +5,20 @@
   "sections": [
     {
       "name": "Prematch",
-      "preserveDataOnReset": true,
+      "preserveDataOnReset": false,
       "fields": [
         {
           "title": "Scouter Initials",
           "type": "text",
           "required": true,
+          "rows": 1,
           "code": "scouter"
         },
         {
           "title": "Match Number",
-          "type": "number",
+          "type": "text",
           "required": true,
+          "rows": 1,
           "code": "matchNumber"
         },
         {
@@ -36,8 +38,9 @@
         },
         {
           "title": "Team Number",
-          "type": "number",
+          "type": "text",
           "required": true,
+          "rows": 1,
           "code": "teamNumber"
         },
         {
@@ -267,6 +270,7 @@
           "min": 0,
           "max": 50,
           "required": false,
+          "rows": 3,
           "placeholder": "What was noteworthy or unusual about this performance?"
         }
       ]
