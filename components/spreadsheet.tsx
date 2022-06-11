@@ -1,5 +1,5 @@
 import { GoogleSpreadsheet } from 'google-spreadsheet'
-import { toast } from 'react-toastify'
+import { cssTransition, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import isReachable from 'is-reachable'
 
@@ -64,16 +64,14 @@ export default async function SheetWrite (dataString: string, columnNames: strin
         // Let the scouter know if writing was successful or not
         // Would be great to find a way to make a custom modal dialog for this
         if (isEqual) {
-            //alert('Successfully wrote row ' + rowNum + ' to the Google Sheet')
             toast.success(
-                'Successfully wrote row ' + rowNum + ' to ' + doc.title,
+                <p>Successfully wrote<br/>row {rowNum} to<br/>{doc.title}</p>,
                 {
                     theme: 'colored',
                     position: toast.POSITION.TOP_CENTER
                 }
             )
         } else {
-            //alert('Was not able to write to the Google Sheet - please use the QR code')
             toast.error(
                 'Was not able to write to the Google Sheet - please use the QR code',
                 {
