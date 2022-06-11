@@ -162,7 +162,7 @@ export default function Home() {
         />
 
         <form>
-          <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             {formData.sections.map((section) => {
               return (
                 <Section
@@ -174,7 +174,7 @@ export default function Home() {
               )
             })}
 
-            <div className="mb-4 flex flex-col justify-center rounded bg-white shadow-md">
+            <div className="mb-4 flex flex-col justify-center rounded bg-white shadow-mdm">
               <button
                 className="focus:shadow-outline m-2 rounded bg-gray-500 py-6 px-6 font-bold text-white hover:bg-gray-700 focus:shadow-lg focus:outline-none disabled:bg-gray-300"
                 type="button"
