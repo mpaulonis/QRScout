@@ -10,7 +10,7 @@ import QRModal from '../components/QRModal'
 import Section from '../components/Section'
 import Button, { Variant } from '../components/core/Button'
 import SheetWrite from '../components/spreadsheet'
-import { ToastContainer, toast } from 'react-toastify'
+import { ToastContainer, toast, cssTransition } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 function buildConfig(c: Config) {

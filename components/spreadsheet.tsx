@@ -67,6 +67,7 @@ export default async function SheetWrite (dataString: string, columnNames: strin
             toast.success(
                 <p>Successfully wrote<br/>row {rowNum} to<br/>{doc.title}</p>,
                 {
+                    bodyClassName: 'text-xl',
                     theme: 'colored',
                     position: toast.POSITION.TOP_CENTER
                 }
@@ -75,6 +76,7 @@ export default async function SheetWrite (dataString: string, columnNames: strin
             toast.error(
                 'Was not able to write to the Google Sheet - please use the QR code',
                 {
+                    bodyClassName: 'text-xl',
                     theme: 'colored',
                     position: toast.POSITION.TOP_CENTER
                 }
