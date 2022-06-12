@@ -14,11 +14,23 @@ export default async function SheetWrite (dataString: string, columnNames: strin
         toast.error(
             'Internet not available - please use the QR code',
             {
+                bodyClassName: 'text-xl',
                 theme: 'colored',
                 position: toast.POSITION.TOP_CENTER
             }
         )
     } else {
+        toast(
+            'Attempting to write scouting data - stand by',
+            {
+                type: toast.TYPE.INFO,
+                autoClose: false,
+                bodyClassName: 'text-xl',
+                theme: 'colored',
+                position: toast.POSITION.TOP_CENTER,
+                toastId: 'write'
+            }
+        );
         // Get service account email and key for authentication
         // In development, these get loaded automatically from .env.local
         // In production, they are configured in the Vercel environment
@@ -64,21 +76,16 @@ export default async function SheetWrite (dataString: string, columnNames: strin
         // Let the scouter know if writing was successful or not
         // Would be great to find a way to make a custom modal dialog for this
         if (isEqual) {
-            toast.success(
-                <p>Successfully wrote<br/>row {rowNum} to<br/>{doc.title}</p>,
-                {
-                    bodyClassName: 'text-xl',
-                    theme: 'colored',
-                    position: toast.POSITION.TOP_CENTER
-                }
-            )
+           toast.update('write', {
+               render: () => <p>Successfully wrote<br/>row {rowNum} to<br/>{doc.title}</p>,
+               type: toast.TYPE.SUCCESS,
+               autoClose: 5000
+           })
         } else {
-            toast.error(
-                'Was not able to write to the Google Sheet - please use the QR code',
-                {
-                    bodyClassName: 'text-xl',
-                    theme: 'colored',
-                    position: toast.POSITION.TOP_CENTER
+            toast.update('write', {
+                render: 'Was not able to write to the Google Sheet - please use the QR code',
+                type: toast.TYPE.ERROR,
+                autoClose: 5000
                 }
             )
         }
