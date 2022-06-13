@@ -165,7 +165,7 @@ export default function Home() {
         </h1>
         <QRModal
           show={showQR}
-          title={`${getFieldValue('robot')} - ${getFieldValue('matchNumber')}`}
+          title={`${getFieldValue('allianceId')} - ${getFieldValue('match')}`}
           data={getQRCodeData()}
           onDismiss={() => setShowQR(false)}
         />

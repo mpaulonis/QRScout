@@ -1,31 +1,31 @@
 {
   "$schema": "../schema.json",
   "title": "QRScout",
-  "page_title": "4020 Scout",
+  "page_title": "4020 Scouting",
   "sections": [
     {
       "name": "Prematch",
       "preserveDataOnReset": false,
       "fields": [
         {
-          "title": "Scouter Initials",
+          "title": "Scouter_Initials",
           "type": "text",
           "required": true,
           "rows": 1,
           "code": "scouter"
         },
         {
-          "title": "Match Number",
+          "title": "Match_Number",
           "type": "text",
           "required": true,
           "rows": 1,
-          "code": "matchNumber"
+          "code": "match"
         },
         {
-          "title": "Robot",
+          "title": "Alliance_ID",
           "type": "select",
           "required": true,
-          "code": "robot",
+          "code": "allianceId",
           "choices": {
             "r1": "Red 1",
             "b1": "Blue 1",
@@ -37,61 +37,41 @@
           "defaultValue": "r1"
         },
         {
-          "title": "Team Number",
+          "title": "Team_Number",
           "type": "text",
           "required": true,
           "rows": 1,
           "code": "teamNumber"
         },
         {
-          "title": "No Show",
-          "type": "boolean",
-          "defaultValue": false,
+          "title": "Starting_Location",
+          "type": "select",
+          "choices": {
+            "left": "Left",
+            "middle": "Middle",
+            "right": "Right",
+            "noshow": "No Show"
+          },
+          "defaultValue": "left",
           "required": false,
-          "code": "noShow"
-        },
-        {
-          "title": "Using Human Player",
-          "type": "boolean",
-          "required": false,
-          "defaultValue": false,
-          "code": "humanPlayer"
+          "code": "autoStart"
         }
       ]
     },
     {
       "name": "Autonomous",
       "fields": [
-        {
-          "title": "Starting Location",
-          "type": "select",
-          "choices": {
-            "left": "Left",
-            "middle": "Middle",
-            "right": "Right"
-          },
-          "defaultValue": "left",
-          "required": false,
-          "code": "autoStart"
-        },
+        
         {
           "code": "at",
-          "title": "Taxied?",
+          "title": "Taxied",
           "type": "boolean",
           "defaultValue": false,
           "required": false
         },
         {
           "code": "au",
-          "title": "Auto Upper Cargo Scored",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "aum",
-          "title": "Auto Upper Cargo Missed",
+          "title": "Auto_Upper_Cargo_Made",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -99,25 +79,10 @@
         },
         {
           "code": "al",
-          "title": "Auto Lower Cargo Scored",
+          "title": "Auto_Lower_Cargo_Made",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
-          "required": false
-        },
-        {
-          "code": "alm",
-          "title": "Auto Lower Cargo Missed",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "ac",
-          "title": "Picked up more cargo?",
-          "type": "boolean",
-          "defaultValue": false,
           "required": false
         }
       ]
@@ -127,15 +92,7 @@
       "fields": [
         {
           "code": "tu",
-          "title": "Upper Cargo Scored",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "tm",
-          "title": "Upper Cargo Missed",
+          "title": "Upper_Cargo_Made",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -143,15 +100,7 @@
         },
         {
           "code": "tl",
-          "title": "Lower Cargo Scored",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "tn",
-          "title": "Lower Cargo Missed",
+          "title": "Lower_Cargo_Made",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -159,29 +108,16 @@
         },
         {
           "code": "wd",
-          "title": "Was Defended",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "cl",
-          "title": "Pick up Cargo where",
+          "title": "Was_Defended",
           "type": "select",
           "choices": {
-            "t": "Terminal",
-            "g": "Ground",
-            "b": "Both",
-            "x": "Not Attempted"
+            "0": "None or little",
+            "1": "Moderately",
+            "2": "Heavily"
           },
-          "defaultValue": "x",
+          "defaultValue": "0",
           "required": false
-        }
-      ]
-    },
-    {
-      "name": "Endgame",
-      "fields": [
+        },
         {
           "code": "c",
           "title": "Climb",
@@ -192,54 +128,105 @@
             "3": "High",
             "4": "Traversal",
             "f": "Attempted but Failed",
+            "p": "Awarded by Foul",
             "x": "Not Attempted"
           },
           "defaultValue": "x",
-          "required": false
-        },
-        {
-          "code": "be",
-          "title": "Started climb before EndGame",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "cn",
-          "title": "# of alliance bots climbed",
-          "type": "counter",
-          "defaultValue": 0,
           "required": false
         }
       ]
     },
     {
-      "name": "Postmatch",
+      "name": "Defense/Fouls",
       "fields": [
         {
-          "code": "ds",
-          "title": "Driver Skill",
+          "code": "df",
+          "title": "Held_Opponent_Cargo",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "da",
+          "title": "Defense_Amount",
           "type": "select",
           "choices": {
-            "n": "Not Effective",
-            "a": "Average",
-            "v": "Very Effective",
-            "x": "Not Observed"
+            "0": "None or very little",
+            "1": "Moderate amount",
+            "2": "Most of the time"
+          },
+          "defaultValue": "0",
+          "required": false
+        },
+        {
+          "code": "de",
+          "title": "Defense_Effectiveness",
+          "type": "select",
+          "choices": {
+            "x": "No defense played",
+            "0": "Poor",
+            "1": "OK",
+            "2": "Excellent"
           },
           "defaultValue": "x",
           "required": false
         },
         {
-          "code": "dr",
-          "title": "Defense Rating",
+          "code": "foul",
+          "title": "Fouls",
           "type": "select",
           "choices": {
-            "n": "Not Effective",
-            "a": "Average",
-            "v": "Very Effective",
-            "x": "Not Observed"
+            "x": "Forgot to notice",
+            "0": "None noticed - clean",
+            "1": "1 or 2 regular fouls",
+            "2": "Tech foul or multiple regular",
+            "3": "Fouling machine!"
           },
           "defaultValue": "x",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Evaluation",
+      "fields": [
+        {
+          "code": "fender",
+          "title": "Fender_Shooting",
+          "type": "select",
+          "choices": {
+            "x": "Forgot to notice",
+            "0": "Rare if any",
+            "1": "Some fender, some not",
+            "2": "Most or all"
+          },
+          "defaultValue": "x",
+          "required": false
+        },
+        {
+          "code": "pad",
+          "title": "Launchpad_Shooting",
+          "type": "select",
+          "choices": {
+            "x": "Forgot to notice",
+            "0": "Rare if any",
+            "1": "Used to avoid defense",
+            "2": "Used most of the time"
+          },
+          "defaultValue": "x",
+          "required": false
+        },
+        {
+          "code": "ds",
+          "title": "Driver_Skill",
+          "type": "select",
+          "choices": {
+            "0": "Poor",
+            "1": "Fair",
+            "2": "Mostly good",
+            "3": "Very good"
+          },
+          "defaultValue": "0",
           "required": false
         },
         {
@@ -251,14 +238,7 @@
         },
         {
           "code": "to",
-          "title": "Tipped Over",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "cf",
-          "title": "Yellow/Red Card",
+          "title": "Tipped_Over",
           "type": "boolean",
           "defaultValue": false,
           "required": false
