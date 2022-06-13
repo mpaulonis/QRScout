@@ -5,7 +5,7 @@ import isReachable from 'is-reachable'
 
 // Open the correct Google Sheet by ID
 // The string in the command below is the part of the Google Sheet URL after /d/ and before /edit
-const doc = new GoogleSpreadsheet('1n3vnxGbNDAMzxUrlr2Hr-7XJHRHUMkjKROjaXen85i4');
+const doc = new GoogleSpreadsheet(process.env.NEXT_PUBLIC_GOOGLE_SHEET_ID as string);
 
 // Write scouting data to the Google Sheet
 export default async function SheetWrite (dataString: string, columnNames: string) {
