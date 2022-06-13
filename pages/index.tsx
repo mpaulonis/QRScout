@@ -214,6 +214,7 @@ export default function Home() {
                 className="m-2"
                 onClick={() =>
                   navigator.clipboard.writeText(
+                    'Timestamp\t' +
                     formData.sections
                       .map((s) => s.fields)
                       .flat()
