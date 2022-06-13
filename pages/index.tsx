@@ -12,6 +12,7 @@ import Button, { Variant } from '../components/core/Button'
 import SheetWrite from '../components/spreadsheet'
 import { ToastContainer, toast, cssTransition } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { constants } from 'crypto'
 
 function buildConfig(c: Config) {
   let config: Config = { ...c }
@@ -89,19 +90,27 @@ export default function Home() {
   }
 
   function getQRCodeData(): string {
-    return formData.sections
+    const entries = formData.sections
       .map((s) => s.fields)
       .flat()
       .map((v) => `${v.value}`)
       .join('\t')
+    const ts = new Date().toLocaleString('en-US', {
+      hour12: false, 
+      dateStyle: 'full', 
+      timeStyle: 'short'
+    })
+    return ts.concat('\t', entries)
   }
 
   function getColumnNames(): string {
-    return formData.sections
-      .map((s) => s.fields)
-      .flat()
-      .map((f) => f.title)
-      .join('\t')
+    const headers = formData.sections
+    .map((s) => s.fields)
+    .flat()
+    .map((f) => f.title)
+    .join('\t')
+    const tsheader = 'Timestamp'
+    return tsheader.concat('\t', headers)
   }
 
   function download(filename: string, text: string) {
