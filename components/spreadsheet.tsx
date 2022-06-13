@@ -10,27 +10,27 @@ const doc = new GoogleSpreadsheet('1n3vnxGbNDAMzxUrlr2Hr-7XJHRHUMkjKROjaXen85i4'
 // Write scouting data to the Google Sheet
 export default async function SheetWrite (dataString: string, columnNames: string) {
 
+    toast(
+        'Attempting to write scouting data - stand by',
+        {
+            type: toast.TYPE.INFO,
+            autoClose: false,
+            bodyClassName: 'text-xl',
+            theme: 'colored',
+            position: toast.POSITION.TOP_CENTER,
+            toastId: 'write'
+        }
+    );
+
     if (!await isReachable('google.com')) {
-        toast.error(
-            'Internet not available - please use the QR code',
-            {
-                bodyClassName: 'text-xl',
-                theme: 'colored',
-                position: toast.POSITION.TOP_CENTER
+        toast.update('write', {
+            render: 'Internet not available - please use the QR code',
+            type: toast.TYPE.ERROR,
+            autoClose: 5000
             }
         )
     } else {
-        toast(
-            'Attempting to write scouting data - stand by',
-            {
-                type: toast.TYPE.INFO,
-                autoClose: false,
-                bodyClassName: 'text-xl',
-                theme: 'colored',
-                position: toast.POSITION.TOP_CENTER,
-                toastId: 'write'
-            }
-        );
+        
         // Get service account email and key for authentication
         // In development, these get loaded automatically from .env.local
         // In production, they are configured in the Vercel environment
