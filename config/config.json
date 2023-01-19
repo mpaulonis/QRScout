@@ -1,0 +1,323 @@
+{
+  "$schema": "../schema.json",
+  "title": "QRScout",
+  "page_title": "4020 Scouting",
+  "sections": [
+    {
+      "name": "Prematch",
+      "preserveDataOnReset": false,
+      "fields": [
+        {
+          "title": "Scouter_Initials",
+          "type": "text",
+          "required": true,
+          "rows": 1,
+          "code": "scouter"
+        },
+        {
+          "title": "Match_Number",
+          "type": "text",
+          "required": true,
+          "rows": 1,
+          "code": "match"
+        },
+        {
+          "title": "Alliance_ID",
+          "type": "select",
+          "required": true,
+          "code": "allianceId",
+          "choices": {
+            "r1": "Red 1",
+            "b1": "Blue 1",
+            "r2": "Red 2",
+            "b2": "Blue 2",
+            "r3": "Red 3",
+            "b3": "Blue 3"
+          },
+          "defaultValue": "r1"
+        },
+        {
+          "title": "Team_Number",
+          "type": "text",
+          "required": true,
+          "rows": 1,
+          "code": "teamNumber"
+        },
+        {
+          "title": "Starting_Location",
+          "type": "select",
+          "choices": {
+            "barrier": "Barrier",
+            "middle": "Middle",
+            "guardrail": "Guardrail",
+            "noshow": "No Show"
+          },
+          "defaultValue": "barrier",
+          "required": false,
+          "code": "autoStart"
+        }
+      ]
+    },
+    {
+      "name": "Autonomous",
+      "fields": [
+        {
+          "code": "mobility",
+          "title": "Mobility",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "atcone",
+          "title": "Auto_Top_Cone",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "atcube",
+          "title": "Auto_Top_Cube",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "amcone",
+          "title": "Auto_Middle_Cone",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "amcube",
+          "title": "Auto_Middle_Cube",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "abcone",
+          "title": "Auto_Bottom_Cone",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "abcube",
+          "title": "Auto_Bottom_Cube",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "title": "Auto_Charge",
+          "type": "select",
+          "choices": {
+            "noattempt": "No Attempt",
+            "docked": "Docked",
+            "engaged": "Engaged",
+            "failed": "Failed"
+          },
+          "defaultValue": "noattempt",
+          "required": false,
+          "code": "autoCharge"
+        }  
+      ]
+    },
+    {
+      "name": "Teleop",
+      "fields": [
+        {
+          "code": "tcone",
+          "title": "Top_Cone",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tcube",
+          "title": "Top_Cube",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "mcone",
+          "title": "Middle_Cone",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "mcube",
+          "title": "Middle_Cube",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "bcone",
+          "title": "Bottom_Cone",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "bcube",
+          "title": "Bottom_Cube",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "wasDefended",
+          "title": "Was_Defended",
+          "type": "select",
+          "choices": {
+            "0": "None or little",
+            "1": "Moderately",
+            "2": "Heavily"
+          },
+          "defaultValue": "0",
+          "required": false
+        },
+        {
+          "code": "endgame",
+          "title": "Endgame",
+          "type": "select",
+          "choices": {
+            "noattempt": "No Attempt",
+            "parked": "Parked",
+            "docked": "Docked",
+            "engaged": "Engaged",
+            "failed": "Failed on Charge Station",
+            "awarded": "Awarded Engage by Foul"
+          },
+          "defaultValue": "noattempt",
+          "required": false
+        },
+        {
+          "code": "chargeBalance",
+          "title": "Charge_Station_Balance",
+          "type": "select",
+          "choices": {
+            "noattempt": "No Attempt",
+            "steady": "Passive - Steady",
+            "slider": "Passive - Sliding",
+            "great": "Active - Great",
+            "ok": "Active - OK",
+            "hinder": "Active - Hindrance"
+          },
+          "defaultValue": "noattempt",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Defense/Fouls",
+      "fields": [
+        {
+          "code": "defenseAmt",
+          "title": "Defense_Played",
+          "type": "select",
+          "choices": {
+            "0": "None or very little",
+            "1": "Moderate amount",
+            "2": "Most of the time"
+          },
+          "defaultValue": "0",
+          "required": false
+        },
+        {
+          "code": "defenseEff",
+          "title": "Defense_Effectiveness",
+          "type": "select",
+          "choices": {
+            "x": "No defense played",
+            "0": "Poor",
+            "1": "OK",
+            "2": "Excellent"
+          },
+          "defaultValue": "x",
+          "required": false
+        },
+        {
+          "code": "foul",
+          "title": "Fouls",
+          "type": "select",
+          "choices": {
+            "x": "Forgot to notice",
+            "0": "None noticed - clean",
+            "1": "1 or 2 regular fouls",
+            "2": "Tech foul or many regular",
+            "3": "Fouling machine!"
+          },
+          "defaultValue": "x",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Evaluation",
+      "fields": [
+        {
+          "code": "driverSkill",
+          "title": "Driver_Skill",
+          "type": "select",
+          "choices": {
+            "0": "Poor",
+            "1": "Fair",
+            "2": "Mostly good",
+            "3": "Very good"
+          },
+          "defaultValue": "0",
+          "required": false
+        },
+        {
+          "code": "coop",
+          "title": "Alliance_>=3_in_CoOp_Grid",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "died",
+          "title": "Died",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "tipped",
+          "title": "Tipped_Over",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "co",
+          "title": "Comments",
+          "type": "text",
+          "min": 0,
+          "max": 50,
+          "required": false,
+          "rows": 3,
+          "placeholder": "What was noteworthy or unusual about this performance?"
+        }
+      ]
+    }
+  ]
+}
