@@ -8,7 +8,7 @@
       "preserveDataOnReset": false,
       "fields": [
         {
-          "title": "Scouter_Initials",
+          "title": "Scouter_Initial",
           "type": "text",
           "required": true,
           "rows": 1,
@@ -49,179 +49,176 @@
           "choices": {
             "barrier": "Barrier",
             "middle": "Middle",
-            "guardrail": "Guardrail",
+            "opposite": "Opposite",
             "noshow": "No Show"
           },
-          "defaultValue": "barrier",
+          "defaultValue": "middle",
           "required": false,
           "code": "autoStart"
         }
       ]
     },
     {
-      "name": "Autonomous",
+      "name": "Auto Place",
       "fields": [
+        
         {
-          "code": "mobility",
-          "title": "Mobility",
+          "code": "lc",
+          "title": "Auto_Left_Community",
           "type": "boolean",
           "defaultValue": false,
           "required": false
         },
         {
-          "code": "atcone",
-          "title": "Auto_Top_Cone",
+          "code": "alc",
+          "title": "Auto_Low_Cone",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
           "required": false
         },
         {
-          "code": "atcube",
-          "title": "Auto_Top_Cube",
+          "code": "amc",
+          "title": "Auto_Mid_Cone",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
           "required": false
         },
         {
-          "code": "amcone",
-          "title": "Auto_Middle_Cone",
+          "code": "ahc",
+          "title": "Auto_High_Cone",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
           "required": false
         },
         {
-          "code": "amcube",
-          "title": "Auto_Middle_Cube",
+          "code": "alb",
+          "title": "Auto_Low_Cube",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
           "required": false
         },
         {
-          "code": "abcone",
-          "title": "Auto_Bottom_Cone",
+          "code": "amb",
+          "title": "Auto_Mid_Cube",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
           "required": false
         },
         {
-          "code": "abcube",
-          "title": "Auto_Bottom_Cube",
+          "code": "ahb",
+          "title": "Auto_High_Cube",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
           "required": false
-        },
-        {
-          "title": "Auto_Charge",
-          "type": "select",
-          "choices": {
-            "noattempt": "No Attempt",
-            "docked": "Docked",
-            "engaged": "Engaged",
-            "failed": "Failed"
-          },
-          "defaultValue": "noattempt",
-          "required": false,
-          "code": "autoCharge"
-        }  
+        }
       ]
     },
     {
-      "name": "Teleop",
+      "name": "Auto Charge",
       "fields": [
         {
-          "code": "tcone",
-          "title": "Top_Cone",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "tcube",
-          "title": "Top_Cube",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "mcone",
-          "title": "Middle_Cone",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "mcube",
-          "title": "Middle_Cube",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "bcone",
-          "title": "Bottom_Cone",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "bcube",
-          "title": "Bottom_Cube",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "required": false
-        },
-        {
-          "code": "wasDefended",
-          "title": "Was_Defended",
+          "code": "ab",
+          "title": "Auto Balance",
           "type": "select",
           "choices": {
-            "0": "None or little",
-            "1": "Moderately",
-            "2": "Heavily"
-          },
-          "defaultValue": "0",
-          "required": false
-        },
-        {
-          "code": "endgame",
-          "title": "Endgame",
-          "type": "select",
-          "choices": {
-            "noattempt": "No Attempt",
-            "parked": "Parked",
-            "docked": "Docked",
             "engaged": "Engaged",
-            "failed": "Failed on Charge Station",
-            "awarded": "Awarded Engage by Foul"
+            "docked": "Docked",
+            "failed": "Failed",
+            "not_att": "Not Attempted"
           },
-          "defaultValue": "noattempt",
+          "defaultValue": "not_att",
           "required": false
         },
         {
-          "code": "chargeBalance",
-          "title": "Charge_Station_Balance",
+          "code": "ad",
+          "title": "Team_Docking_Points?",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Teleop Place",
+      "fields": [
+        
+        {
+          "code": "tlc",
+          "title": "Teleop_Low_Cone",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tmc",
+          "title": "Teleop_Mid_Cone",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "thc",
+          "title": "Teleop_High_Cone",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tlb",
+          "title": "Teleop_Low_Cube",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "tmb",
+          "title": "Teleop_Mid_Cube",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "thb",
+          "title": "Teleop_High_Cube",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Teleop Charge",
+      "fields": [
+        {
+          "code": "tb",
+          "title": "Teleop Balance",
           "type": "select",
           "choices": {
-            "noattempt": "No Attempt",
-            "steady": "Passive - Steady",
-            "slider": "Passive - Sliding",
-            "great": "Active - Great",
-            "ok": "Active - OK",
-            "hinder": "Active - Hindrance"
+            "engaged": "Engaged",
+            "docked": "Docked",
+            "failed": "Failed",
+            "not_att": "Not Attempted"
           },
-          "defaultValue": "noattempt",
+          "defaultValue": "not_att",
+          "required": false
+        },
+        {
+          "code": "cr",
+          "title": "Parked?",
+          "type": "boolean",
+          "defaultValue": false,
           "required": false
         }
       ]
@@ -230,28 +227,28 @@
       "name": "Defense/Fouls",
       "fields": [
         {
-          "code": "defenseAmt",
-          "title": "Defense_Played",
+          "code": "da",
+          "title": "Defense_Amount",
           "type": "select",
           "choices": {
-            "0": "None or very little",
-            "1": "Moderate amount",
-            "2": "Most of the time"
+            "little": "None or very little",
+            "moderate": "Moderate amount",
+            "most": "Most of the time"
           },
-          "defaultValue": "0",
+          "defaultValue": "little",
           "required": false
         },
         {
-          "code": "defenseEff",
+          "code": "de",
           "title": "Defense_Effectiveness",
           "type": "select",
           "choices": {
-            "x": "No defense played",
-            "0": "Poor",
-            "1": "OK",
-            "2": "Excellent"
+            "no": "No defense played",
+            "poor": "Poor",
+            "ok": "OK",
+            "great": "Excellent"
           },
-          "defaultValue": "x",
+          "defaultValue": "no",
           "required": false
         },
         {
@@ -259,13 +256,13 @@
           "title": "Fouls",
           "type": "select",
           "choices": {
-            "x": "Forgot to notice",
-            "0": "None noticed - clean",
-            "1": "1 or 2 regular fouls",
-            "2": "Tech foul or many regular",
-            "3": "Fouling machine!"
+            "n/a": "Forgot to notice",
+            "clean": "None noticed - clean",
+            "1or2": "1 or 2 regular fouls",
+            "multiple": "Tech foul or multiple regular",
+            "a_lot": "Fouling machine!"
           },
-          "defaultValue": "x",
+          "defaultValue": "n/a",
           "required": false
         }
       ]
@@ -274,37 +271,64 @@
       "name": "Evaluation",
       "fields": [
         {
-          "code": "driverSkill",
-          "title": "Driver_Skill",
-          "type": "select",
-          "choices": {
-            "0": "Poor",
-            "1": "Fair",
-            "2": "Mostly good",
-            "3": "Very good"
-          },
-          "defaultValue": "0",
-          "required": false
-        },
-        {
-          "code": "coop",
-          "title": "Alliance_>=3_in_CoOp_Grid",
+          "code": "co",
+          "title": "Coopertition?",
           "type": "boolean",
           "defaultValue": false,
           "required": false
         },
         {
-          "code": "died",
+          "code": "ds",
+          "title": "Driver_Skill",
+          "type": "select",
+          "choices": {
+            "hindrance": "Hindrance",
+            "poor": "Poor",
+            "fair": "Fair",
+            "good": "Mostly good",
+            "great": "Very good" 
+          },
+          "defaultValue": "poor",
+          "required": false
+        },
+        {
+          "code": "d",
           "title": "Died",
           "type": "boolean",
           "defaultValue": false,
           "required": false
         },
         {
-          "code": "tipped",
+          "code": "to",
           "title": "Tipped_Over",
           "type": "boolean",
           "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "gp",
+          "title": "Ground_Pickup",
+          "type": "select",
+          "choices": {
+            "none": "None",
+            "cubes": "Cubes",
+            "cones": "Cones",
+            "both": "Both"
+          },
+          "defaultValue": "none",
+          "required": false
+        },
+        {
+          "code": "bs",
+          "title": "Balance_Skill",
+          "type": "select",
+          "choices": {
+            "hindrance": "Hindrance",
+            "failed": "Balance Failed",
+            "ok": "Balance Ok",
+            "corrector": "Balance Corrector"
+          },
+          "defaultValue": "ok",
           "required": false
         },
         {
