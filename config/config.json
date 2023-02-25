@@ -8,7 +8,7 @@
       "preserveDataOnReset": false,
       "fields": [
         {
-          "title": "Scouter_Initial",
+          "title": "Scouter_Initials",
           "type": "text",
           "required": true,
           "rows": 1,
@@ -64,7 +64,7 @@
         
         {
           "code": "lc",
-          "title": "Auto_Left_Community",
+          "title": "Auto_Mobility",
           "type": "boolean",
           "defaultValue": false,
           "required": false
