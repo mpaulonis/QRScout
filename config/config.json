@@ -311,7 +311,7 @@
           "type": "select",
           "choices": {
             "none": "None",
-            "boxs": "Boxes",
+            "boxes": "Boxes",
             "cones": "Cones",
             "both": "Both"
           },
