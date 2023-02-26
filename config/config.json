@@ -271,7 +271,7 @@
       "name": "Evaluation",
       "fields": [
         {
-          "code": "co",
+          "code": "coop",
           "title": "Coopertition?",
           "type": "boolean",
           "defaultValue": false,
@@ -336,8 +336,6 @@
           "code": "co",
           "title": "Comments",
           "type": "text",
-          "min": 0,
-          "max": 50,
           "required": false,
           "rows": 3,
           "placeholder": "What was noteworthy or unusual about this performance?"
