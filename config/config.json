@@ -4,8 +4,8 @@
   "page_title": "4020 Scouting",
   "sections": [
     {
-      "name": "Prematch",
-      "preserveDataOnReset": false,
+      "name": "Scout",
+      "preserveDataOnReset": true,
       "fields": [
         {
           "title": "Scouter_Initials",
@@ -13,7 +13,13 @@
           "required": true,
           "rows": 1,
           "code": "scouter"
-        },
+        }
+      ]
+    },
+    {
+      "name": "Prematch",
+      "preserveDataOnReset": false,
+      "fields": [
         {
           "title": "Match_Number",
           "type": "text",
