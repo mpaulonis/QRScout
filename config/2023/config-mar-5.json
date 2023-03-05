@@ -73,7 +73,6 @@
           "code": "alc",
           "title": "Auto_Low_Cone",
           "type": "counter",
-          "bgcolor": "bg-yellow-600",
           "defaultValue": 0,
           "min": 0,
           "required": false
@@ -82,7 +81,6 @@
           "code": "amc",
           "title": "Auto_Mid_Cone",
           "type": "counter",
-          "bgcolor": "bg-yellow-600",
           "defaultValue": 0,
           "min": 0,
           "required": false
@@ -91,7 +89,6 @@
           "code": "ahc",
           "title": "Auto_High_Cone",
           "type": "counter",
-          "bgcolor": "bg-yellow-600",
           "defaultValue": 0,
           "min": 0,
           "required": false
@@ -100,7 +97,6 @@
           "code": "alb",
           "title": "Auto_Low_Box",
           "type": "counter",
-          "bgcolor": "bg-indigo-700",
           "defaultValue": 0,
           "min": 0,
           "required": false
@@ -109,7 +105,6 @@
           "code": "amb",
           "title": "Auto_Mid_Box",
           "type": "counter",
-          "bgcolor": "bg-indigo-700",
           "defaultValue": 0,
           "min": 0,
           "required": false
@@ -118,7 +113,6 @@
           "code": "ahb",
           "title": "Auto_High_Box",
           "type": "counter",
-          "bgcolor": "bg-indigo-700",
           "defaultValue": 0,
           "min": 0,
           "required": false
@@ -158,7 +152,6 @@
           "code": "tlc",
           "title": "Teleop_Low_Cone",
           "type": "counter",
-          "bgcolor": "bg-yellow-600",
           "defaultValue": 0,
           "min": 0,
           "required": false
@@ -167,7 +160,6 @@
           "code": "tmc",
           "title": "Teleop_Mid_Cone",
           "type": "counter",
-          "bgcolor": "bg-yellow-600",
           "defaultValue": 0,
           "min": 0,
           "required": false
@@ -176,7 +168,6 @@
           "code": "thc",
           "title": "Teleop_High_Cone",
           "type": "counter",
-          "bgcolor": "bg-yellow-600",
           "defaultValue": 0,
           "min": 0,
           "required": false
@@ -185,7 +176,6 @@
           "code": "tlb",
           "title": "Teleop_Low_Box",
           "type": "counter",
-          "bgcolor": "bg-indigo-700",
           "defaultValue": 0,
           "min": 0,
           "required": false
@@ -194,7 +184,6 @@
           "code": "tmb",
           "title": "Teleop_Mid_Box",
           "type": "counter",
-          "bgcolor": "bg-indigo-700",
           "defaultValue": 0,
           "min": 0,
           "required": false
@@ -203,7 +192,6 @@
           "code": "thb",
           "title": "Teleop_High_Box",
           "type": "counter",
-          "bgcolor": "bg-indigo-700",
           "defaultValue": 0,
           "min": 0,
           "required": false

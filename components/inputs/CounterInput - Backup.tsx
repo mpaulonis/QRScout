@@ -6,7 +6,6 @@ export interface CounterInputProps extends BaseInputProps {
   max?: number
   step?: number
   defaultValue?: number
-  bgcolor?: string
 }
 
 export default function CounterInput(data: CounterInputProps) {
@@ -27,7 +26,7 @@ export default function CounterInput(data: CounterInputProps) {
   return (
     <div className="flex flex-row items-center justify-center ">
       <button
-        className={`focus:shadow-outline w-28 h-16 rounded ${data.bgcolor || "bg-gray-500"} text-4xl text-white hover:bg-red-700 focus:outline-none`}
+        className="focus:shadow-outline w-28 h-16 rounded bg-gray-500 text-4xl text-white hover:bg-red-700 focus:outline-none"
         type="button"
         onClick={() => handleChange(-(data.step || 1))}
       >
@@ -35,7 +34,7 @@ export default function CounterInput(data: CounterInputProps) {
       </button>
       <h2 className="px-4 text-2xl">{data.value}</h2>
       <button
-        className={`focus:shadow-outline w-28 h-16 rounded ${data.bgcolor || "bg-gray-500"} text-4xl  text-white hover:bg-red-700 focus:outline-none`}
+        className="focus:shadow-outline w-28 h-16 rounded bg-gray-500 text-4xl  text-white hover:bg-red-700 focus:outline-none"
         type="button"
         onClick={() => handleChange(data.step || 1)}
       >
