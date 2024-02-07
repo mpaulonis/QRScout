@@ -1,1 +1,0 @@
-Write a file to change something in the project folder so Vercel will rebuild the app after changing the Google Sheet ID.

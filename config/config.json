@@ -47,12 +47,12 @@
           "title": "Starting_Location",
           "type": "select",
           "choices": {
-            "barrier": "Amp",
-            "middle": "Speaker",
-            "opposite": "Source",
+            "amp": "Amp",
+            "speaker": "Speaker",
+            "source": "Source",
             "noshow": "No Show"
           },
-          "defaultValue": "No Show",
+          "defaultValue": "noshow",
           "required": false,
           "code": "autoStart"
         }
@@ -192,12 +192,12 @@
           "title": "Note_Intake",
           "type": "select",
           "choices": {
-            "None" : "None",
-            "Floor": "Floor",
-            "Source": "Source",
-            "Both": "Both"
+            "none" : "None",
+            "floor": "Floor",
+            "source": "Source",
+            "both": "Both"
           },
-          "defaultValue": "None",
+          "defaultValue": "none",
           "required": false
         }
       ]
@@ -210,12 +210,12 @@
           "title": "End_Position",
           "type": "select",
           "choices": {
-            "NoScore" : "Not Scoring",
-            "Parked": "Parked",
-            "Climbed": "Onstage",
-            "Harmony": "Spotlight"
+            "noScore" : "Not Scoring",
+            "parked": "Parked",
+            "onstage": "Onstage",
+            "spotlight": "Spotlight"
           },
-          "defaultValue": "NoScore",
+          "defaultValue": "noScore",
           "required": false
         },
         {
@@ -231,12 +231,12 @@
           "title": "Harmony",
           "type": "select",
           "choices": {
-            "None" : "None",
-            "First": "First on chain",
-            "Second": "Second on chain",
-            "Third": "Third on chain"
+            "none" : "None",
+            "first": "First on chain",
+            "second": "Second on chain",
+            "third": "Third on chain"
           },
-          "defaultValue": "None",
+          "defaultValue": "none",
           "required": false
         }
       ]
@@ -288,8 +288,6 @@
     {
       "name": "Evaluation",
       "fields": [
-        
-        
         {
           "code": "ds",
           "title": "Driver_Skill",
@@ -325,9 +323,9 @@
           "type": "select",
           "choices": {
 						"na": "No Shots",
-            "Sub": "Close (Subwoofer)",
-            "Wing": "Medium (Stage Area)",
-            "Mid": "Far (Mid-Field)"
+            "sub": "Close (Subwoofer)",
+            "wing": "Medium (Stage Area)",
+            "mid": "Far (Mid-Field)"
           },
           "defaultValue": "na",
           "required": false
