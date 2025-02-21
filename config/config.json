@@ -47,9 +47,9 @@
           "title": "Starting_Location",
           "type": "select",
           "choices": {
-            "processor": "Processor",
-            "middle": "Middle",
-            "opposite": "Opposite",
+            "amp": "Amp",
+            "speaker": "Speaker",
+            "source": "Source",
             "noshow": "No Show"
           },
           "defaultValue": "noshow",
@@ -69,195 +69,210 @@
           "required": false
         },
         {
-          "code": "al1",
-          "title": "Auto_Coral_L1",
+          "code": "as",
+          "title": "Auto_Speaker",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
-          "bgcolor": "bg-purple-300",
+          "bgcolor": "bg-green-600",
           "required": false
         },
         {
-          "code": "al2",
-          "title": "Auto_Coral_L2",
+          "code": "asm",
+          "title": "Auto_Speaker_Miss",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
-          "bgcolor": "bg-purple-400",
+          "bgcolor": "bg-yellow-600",
           "required": false
         },
         {
-          "code": "al3",
-          "title": "Auto_Coral_L3",
+          "code": "aa",
+          "title": "Auto_Amp",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
-          "bgcolor": "bg-purple-500",
+          "bgcolor": "bg-green-400",
           "required": false
         },
         {
-          "code": "al4",
-          "title": "Auto_Coral_L4",
+          "code": "aam",
+          "title": "Auto_Amp_Miss",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
-          "bgcolor": "bg-purple-600",
+          "bgcolor": "bg-yellow-400",
+          "required": false
+        } 
+      ]
+    },
+    {
+      "name": "Auto Center Note Pickup",
+      "fields": [
+        {
+          "code": "ac1",
+          "title": "Amp",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "ac2",
+          "title": "Mid_Amp",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "ac3",
+          "title": "Mid",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "ac4",
+          "title": "Mid_Source",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        },
+        {
+          "code": "ac5",
+          "title": "Source",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Teleop Notes",
+      "fields": [
+        {
+          "code": "ts",
+          "title": "Teleop_Speaker",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "bgcolor": "bg-green-600",
+          "required": false
+        },
+        {
+          "code": "tsm",
+          "title": "Teleop_Speaker_Miss",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "bgcolor": "bg-yellow-600",
           "required": false
         },
         {
           "code": "ta",
-          "title": "Took_Algae",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "pa",
-          "title": "Processed_Algae",
+          "title": "Teleop_Amp",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
-          "bgcolor": "bg-emerald-500",
-          "required": false
-        },
-        {
-          "code": "ba",
-          "title": "Barge_Algae",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "bgcolor": "bg-emerald-500",
-          "required": false
-        }
-      ]
-    },
-    {
-      "name": "Touched Lolipops",
-      "fields": [
-        {
-          "code": "tlo",
-          "title": "Opposite",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "tlm",
-          "title": "Middle",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "tlp",
-          "title": "Processor",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        }
-      ]
-    },
-    {
-      "name": "Teleop Corals",
-      "fields": [
-        {
-          "code": "tl1",
-          "title": "Teleop_Coral_L1",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "bgcolor": "bg-purple-300",
-          "required": false
-        },
-        {
-          "code": "tl2",
-          "title": "Teleop_Coral_L2",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "bgcolor": "bg-purple-400",
-          "required": false
-        },
-        {
-          "code": "tl3",
-          "title": "Teleop_Coral_L3",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "bgcolor": "bg-purple-500",
+          "bgcolor": "bg-green-400",
           "required": false
         },
         {
           "code": "tam",
-          "title": "Teleop_Coral_L4",
+          "title": "Teleop_Amp_Miss",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
-          "bgcolor": "bg-purple-600",
+          "bgcolor": "bg-yellow-400",
           "required": false
         },
         {
-          "code": "cgi",
-          "title": "Coral_Ground_Intake",
+          "code": "coop",
+          "title": "Coopertition",
           "type": "boolean",
           "defaultValue": false,
           "required": false
         },
         {
-          "code": "csi",
-          "title": "Coral_Source_Intake",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "cafr",
-          "title": "Collect_Algae_From_Reef",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "cafg",
-          "title": "Collect_Algae_From_Ground",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "tap",
-          "title": "Algae_Processed",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "bgcolor": "bg-emerald-500",
-          "required": false
-        },
-        {
-          "code": "tpa",
-          "title": "Processed_Algae",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "bgcolor": "bg-emerald-500",
+          "code": "ni",
+          "title": "Note_Intake",
+          "type": "select",
+          "choices": {
+            "none" : "None",
+            "floor": "Floor",
+            "source": "Source",
+            "both": "Both"
+          },
+          "defaultValue": "none",
           "required": false
         }
       ]
     },
     {
-      "name": "Endgame Barge",
+      "name": "Teleop Stage",
       "fields": [
         {
           "code": "tep",
           "title": "End_Position",
           "type": "select",
           "choices": {
-            "noScore": "Not Scoring",
+            "noScore" : "Not Scoring",
             "parked": "Parked",
-            "Shallow": "Sahllow (High)",
-            "Deep": "Deep (Low)"
+            "onstage": "Onstage",
+            "spotlight": "Spotlight"
           },
           "defaultValue": "noScore",
+          "required": false
+        },
+        {
+          "code": "tt",
+          "title": "Trap_Score",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "required": false
+        },
+        {
+          "code": "th",
+          "title": "Harmony",
+          "type": "select",
+          "choices": {
+            "none" : "None",
+            "first": "First on chain",
+            "second": "Second on chain",
+            "third": "Third on chain"
+          },
+          "defaultValue": "none",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Teleop Amplification",
+      "fields": [
+        {
+          "code": "tas",
+          "title": "Amplification_Strategy",
+          "type": "select",
+          "choices": {
+            "na" : "Not Noticed",
+            "shuttler": "Shuttler",
+            "waiting": "Waiting to Shoot",
+            "noStrat": "No Strategy"
+          },
+          "defaultValue": "na",
+          "required": false
+        },
+        {
+          "code": "tae",
+          "title": "Amplification_Skill",
+          "type": "select",
+          "choices": {
+            "na" : "Not Noticed/Not Shooting",
+            "bad": "Bad",
+            "mid": "Mid",
+	          "super": "SuperStar"
+          },
+          "defaultValue": "na",
           "required": false
         }
       ]
@@ -303,13 +318,6 @@
           },
           "defaultValue": "na",
           "required": false
-        },
-        {
-          "code": "toc",
-          "title": "Touched_Opponent_Cage",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
         }
       ]
     },
@@ -321,12 +329,12 @@
           "title": "Driver_Skill",
           "type": "select",
           "choices": {
-            "na": "Not Noticed",
+            "na" : "Not Noticed",
             "hindrance": "Hindrance",
             "poor": "Poor",
             "fair": "Fair",
             "good": "Mostly good",
-            "great": "Very good"
+            "great": "Very good" 
           },
           "defaultValue": "na",
           "required": false
@@ -346,8 +354,22 @@
           "required": false
         },
         {
+          "code": "ssr",
+          "title": "Speaker_Shooting_Range",
+          "type": "select",
+          "choices": {
+	    "na": "No Shots",
+            "sub": "Close (Subwoofer)",
+            "wing": "Medium (Stage Area)",
+            "mid": "Far (Mid-Field)",
+	    "shuttle": "Shuttler (Moved Notes)"
+          },
+          "defaultValue": "na",
+          "required": false
+        },
+        {
           "code": "co",
-          "title": "Comments NO EMOJIS @Ken",
+          "title": "Comments",
           "type": "text",
           "required": false,
           "rows": 3,
