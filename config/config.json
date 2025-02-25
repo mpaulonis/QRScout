@@ -125,7 +125,7 @@
       ]
     },
     {
-      "name": "Teleop Corals",
+      "name": "Teleop",
       "fields": [
         {
           "code": "tl1",
@@ -164,21 +164,7 @@
           "required": false
         },
         {
-          "code": "cgi",
-          "title": "Coral_Ground_Intake",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "csi",
-          "title": "Coral_Source_Intake",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "title": "Intake_Type",
+          "title": "Coral_Intake_Type",
           "type": "select",
           "choices": {
             "source": "Source",
@@ -219,7 +205,7 @@
           "required": false
         },
         {
-          "title": "Type_of_Algae_Collection",
+          "title": "Algae_Intake_Type",
           "type": "select",
           "choices": {
             "Reef": "Reef",
@@ -358,7 +344,7 @@
           "type": "text",
           "required": false,
           "rows": 3,
-          "placeholder": "What was noteworthy or unusual about this performance? (Defense, Penalties, reliablity, etc.)"
+          "placeholder": "What was noteworthy or unusual about this performance? (defense, penalties, reliablity, etc.)"
         }
       ]
     }
