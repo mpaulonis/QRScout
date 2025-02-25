@@ -50,7 +50,7 @@
             "processor": "Processor",
             "middle": "Middle",
             "opposite": "Opposite",
-            "noshow": "No Show"
+            "noShow": "No Show"
           },
           "defaultValue": "noshow",
           "required": false,
@@ -105,13 +105,6 @@
           "required": false
         },
         {
-          "code": "ta",
-          "title": "Took_Algae",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
           "code": "pa",
           "title": "Auto_Processed_Algae",
           "type": "counter",
@@ -127,32 +120,6 @@
           "defaultValue": 0,
           "min": 0,
           "bgcolor": "bg-emerald-500",
-          "required": false
-        }
-      ]
-    },
-    {
-      "name": "Touched Lolipops",
-      "fields": [
-        {
-          "code": "tlo",
-          "title": "Opposite",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "tlm",
-          "title": "Middle",
-          "type": "boolean",
-          "defaultValue": false,
-          "required": false
-        },
-        {
-          "code": "tlp",
-          "title": "Processor",
-          "type": "boolean",
-          "defaultValue": false,
           "required": false
         }
       ]
@@ -211,17 +178,26 @@
           "required": false
         },
         {
-          "code": "cafr",
-          "title": "Collect_Algae_From_Reef",
-          "type": "boolean",
-          "defaultValue": false,
+          "title": "Intake_Type",
+          "type": "select",
+          "choices": {
+            "source": "Source",
+            "ground": "Ground",
+            "both": "Both"
+          },
+          "defaultValue": "Source",
           "required": false
         },
         {
-          "code": "cafg",
-          "title": "Collect_Algae_From_Ground",
-          "type": "boolean",
-          "defaultValue": false,
+          "title": "Coral_Litter",
+          "type": "select",
+          "choices": {
+            "none": "None",
+            "1-2": "1-2",
+            "3-5": "3-5",
+            "more than 5": "More Than 5"
+          },
+          "defaultValue": "None",
           "required": false
         },
         {
@@ -241,6 +217,17 @@
           "min": 0,
           "bgcolor": "bg-emerald-500",
           "required": false
+        },
+        {
+          "title": "Type_of_Algae_Collection",
+          "type": "select",
+          "choices": {
+            "Reef": "Reef",
+            "ground": "Ground",
+            "both": "Both"
+          },
+          "defaultValue": "Reef",
+          "required": false
         }
       ]
     },
@@ -252,12 +239,27 @@
           "title": "End_Position",
           "type": "select",
           "choices": {
-            "noScore": "Not Scoring",
+            "none": "None",
             "parked": "Parked",
-            "Shallow": "Shallow (High)",
-            "Deep": "Deep (Low)"
+            "shallow": "Shallow (High)",
+            "shallowFail": "Shallow (High) failed",
+            "deep": "Deep (Low)",
+            "deepFail": "Deep (Low) failed"
           },
-          "defaultValue": "noScore",
+          "defaultValue": "None",
+          "required": false
+        },
+        {
+          "code": "cs",
+          "title": "Climb_Speed",
+          "type": "select",
+          "choices": {
+            "didNotClimb": "Did not Climb",
+            "slow": "Slow (20-30 Sec.)",
+            "med": "Med (10-20 Sec.)",
+            "fast": "Fast (Under 10 Sec.)"
+          },
+          "defaultValue": "Slow",
           "required": false
         }
       ]
@@ -332,10 +334,15 @@
           "required": false
         },
         {
-          "code": "d",
-          "title": "Died",
-          "type": "boolean",
-          "defaultValue": false,
+          "code": "rd",
+          "title": "Robot_Died",
+          "type": "select",
+          "choices": {
+            "no": "No",
+            "yes": "Yes",
+            "temporarily": "Temporarily"
+          },
+          "defaultValue": "No",
           "required": false
         },
         {
@@ -351,7 +358,7 @@
           "type": "text",
           "required": false,
           "rows": 3,
-          "placeholder": "What was noteworthy or unusual about this performance? (NO EMOJI)"
+          "placeholder": "What was noteworthy or unusual about this performance? (Defense, Penalties, reliablity, etc.)"
         }
       ]
     }
