@@ -181,9 +181,9 @@
           "type": "select",
           "choices": {
             "none": "None",
-            "1-2": "1-2",
-            "3-5": "3-5",
-            "more than 5": "More Than 5"
+            "1to2": "1-2",
+            "3to5": "3-5",
+            "moreThan5": "More Than 5"
           },
           "defaultValue": "None",
           "required": false
@@ -211,7 +211,7 @@
           "title": "Algae_Intake_Type",
           "type": "select",
           "choices": {
-            "Reef": "Reef",
+            "reef": "Reef",
             "ground": "Ground",
             "both": "Both"
           },
@@ -231,9 +231,9 @@
             "none": "None",
             "parked": "Parked",
             "shallow": "Shallow (High)",
-            "shallowFail": "Shallow (High) failed",
+            "failShallow": "Shallow (High) failed",
             "deep": "Deep (Low)",
-            "deepFail": "Deep (Low) failed"
+            "failDeep": "Deep (Low) failed"
           },
           "defaultValue": "None",
           "required": false
@@ -290,7 +290,7 @@
             "clean": "None noticed - clean",
             "1or2": "1 or 2 regular fouls",
             "multiple": "Tech foul or multiple regular",
-            "a_lot": "Fouling machine!"
+            "aLot": "Fouling machine!"
           },
           "defaultValue": "na",
           "required": false
