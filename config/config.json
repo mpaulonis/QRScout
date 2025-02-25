@@ -170,7 +170,8 @@
           "choices": {
             "source": "Source",
             "ground": "Ground",
-            "both": "Both"
+            "both": "Both",
+            "none": "None"
           },
           "defaultValue": "source",
           "required": false
@@ -213,9 +214,10 @@
           "choices": {
             "reef": "Reef",
             "ground": "Ground",
-            "both": "Both"
+            "both": "Both",
+            "none": "None"
           },
-          "defaultValue": "Reef",
+          "defaultValue": "none",
           "required": false
         }
       ]
