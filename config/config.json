@@ -164,6 +164,7 @@
           "required": false
         },
         {
+          "code": "coralIn",
           "title": "Coral_Intake_Type",
           "type": "select",
           "choices": {
@@ -175,6 +176,7 @@
           "required": false
         },
         {
+          "code": "litter",
           "title": "Coral_Litter",
           "type": "select",
           "choices": {
@@ -205,6 +207,7 @@
           "required": false
         },
         {
+          "code": "algaeIn",
           "title": "Algae_Intake_Type",
           "type": "select",
           "choices": {
