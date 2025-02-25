@@ -52,7 +52,7 @@
             "opposite": "Opposite",
             "noShow": "No Show"
           },
-          "defaultValue": "noshow",
+          "defaultValue": "noShow",
           "required": false,
           "code": "autoStart"
         }
@@ -172,7 +172,7 @@
             "ground": "Ground",
             "both": "Both"
           },
-          "defaultValue": "Source",
+          "defaultValue": "source",
           "required": false
         },
         {
@@ -185,7 +185,7 @@
             "3to5": "3-5",
             "moreThan5": "More Than 5"
           },
-          "defaultValue": "None",
+          "defaultValue": "none",
           "required": false
         },
         {
@@ -235,7 +235,7 @@
             "deep": "Deep (Low)",
             "failDeep": "Deep (Low) failed"
           },
-          "defaultValue": "None",
+          "defaultValue": "none",
           "required": false
         },
         {
@@ -248,7 +248,7 @@
             "med": "Med (10-20 Sec.)",
             "fast": "Fast (Under 10 Sec.)"
           },
-          "defaultValue": "Slow",
+          "defaultValue": "didNotClimb",
           "required": false
         }
       ]
@@ -331,7 +331,7 @@
             "yes": "Yes",
             "temporarily": "Temporarily"
           },
-          "defaultValue": "No",
+          "defaultValue": "no",
           "required": false
         },
         {
