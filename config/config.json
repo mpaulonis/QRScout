@@ -105,6 +105,15 @@
           "required": false
         },
         {
+          "code": "ra",
+          "title": "Auto_Removed_Algae",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "bgcolor": "bg-emerald-500",
+          "required": false
+        },
+        {
           "code": "pa",
           "title": "Auto_Processed_Algae",
           "type": "counter",
@@ -187,6 +196,15 @@
             "moreThan5": "More Than 5"
           },
           "defaultValue": "none",
+          "required": false
+        },
+        {
+          "code": "tar",
+          "title": "Teleop_Removed_Algae",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "bgcolor": "bg-emerald-500",
           "required": false
         },
         {
