@@ -47,9 +47,9 @@
           "title": "Starting_Location",
           "type": "select",
           "choices": {
-            "depot": "Depot",
+            "processor": "Processor",
             "middle": "Middle",
-            "outpost": "Outpost",
+            "opposite": "Opposite",
             "noShow": "No Show"
           },
           "defaultValue": "noShow",
@@ -62,34 +62,33 @@
       "name": "Auto",
       "fields": [
         {
-          "code": "aa",
-          "title": "Auto_Accuracy",
-          "type": "select",
-          "choices": {
-            "terrible": "Terrrible",
-            "bad": "Bad",
-            "mid": "Mid",
-            "great": "Great",
-            "awesome": "Awesome"
-          },
-          "defaultValue": "terrible",
+          "code": "lz",
+          "title": "Leave_Zone",
+          "type": "boolean",
+          "defaultValue": false,
           "required": false
         },
         {
-          "code": "ti",
-          "title": "Type_Of_Intake",
-          "type": "select",
-          "choices": {
-            "floor": "Floor",
-            "outpost": "Outpost",
-            "both": "Both"
-          },
-          "defaultValue": "floor",
+          "code": "al1",
+          "title": "Auto_Coral_L1",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "bgcolor": "bg-purple-300",
           "required": false
         },
         {
-          "code": "pm",
-          "title": "Picked_Up_Mid",
+          "code": "al2",
+          "title": "Auto_Coral_L2",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "bgcolor": "bg-purple-400",
+          "required": false
+        },
+        {
+          "code": "al3",
+          "title": "Auto_Coral_L3",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -97,8 +96,8 @@
           "required": false
         },
         {
-          "code": "po",
-          "title": "Picked_Up_Outpost",
+          "code": "al4",
+          "title": "Auto_Coral_L4",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -106,127 +105,26 @@
           "required": false
         },
         {
-          "code": "pd",
-          "title": "Picked_Up_Depot",
+          "code": "ra",
+          "title": "Auto_Removed_Algae",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
-          "bgcolor": "bg-purple-700",
+          "bgcolor": "bg-emerald-500",
           "required": false
         },
         {
-          "code": "c",
-          "title": "Climbed",
-          "type": "select",
-          "choices": {
-            "yes": "Yes",
-            "no": "No",
-            "attempted": "Attempted"
-          },
+          "code": "pa",
+          "title": "Auto_Processed_Algae",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "bgcolor": "bg-emerald-500",
           "required": false
         },
         {
-          "code": "ha",
-          "title": "Had_Advantage",
-          "type": "select",
-          "choices": {
-            "yes": "Yes",
-            "no": "No"
-          },
-          "defaultValue": "no",
-          "required": false
-        }
-      ]
-    },
-    {
-      "name": "Teleop",
-      "fields": [
-        {
-          "code": "tol",
-          "title": "Time_to_get_off_Latter",
-          "type": "select",
-          "choices": {
-            "fast(1-3)": "Fast(1-3)",
-            "med(4-6)": "Med(4-6)",
-            "slow(7+)": "Slow(7+)"
-          },
-          "defaultValue": "Fast(1-3)",
-          "required": false
-        },
-        {
-          "code": "ut",
-          "title": "Can_Go_Under_Trench",
-          "type": "select",
-          "choices": {
-            "yes": "Yes",
-            "no": "No"
-          },
-          "defaultValue": "no",
-          "required": false
-        },
-        {
-          "code": "or",
-          "title": "Can_go_over_Ramp",
-          "type": "select",
-          "choices": {
-            "yes": "Yes",
-            "no": "No"
-          },
-          "defaultValue": "no",
-          "required": false
-        },
-        {
-          "code": "ta",
-          "title": "Teleop_Accuracy",
-          "type": "select",
-          "choices": {
-            "terrible": "Terrrible",
-            "bad": "Bad",
-            "mid": "Mid",
-            "great": "Great",
-            "awesome": "Awesome"
-          },
-          "defaultValue": "terrible",
-          "required": false
-        },
-        {
-          "code": "tr",
-          "title": "Teleop_Range",
-          "type": "range",
-           "min": 0,
-            "max": 10,
-            "step": 1,
-          "defaultValue": 5,
-          "required": false
-        },
-        {
-          "code": "ie",
-          "title": "Intake_Effectiveness",
-          "type": "select",
-          "choices": {
-            "terrible": "Terrrible",
-            "bad": "Bad",
-            "mid": "Mid",
-            "great": "Great",
-            "awesome": "Awesome"
-          },
-          "defaultValue": "terrible",
-          "required": false
-        },
-        {
-          "code": "afo",
-          "title": "Attempt_to_Fill_Outpost",
-          "type": "select",
-          "choices": {
-            "yes": "Yes",
-            "no": "No"
-          },
-          "defaultValue": "no",
-          "required": false
-        },
-        {
-          "code": "hc",
-          "title": "Hopper_Cycles",
+          "code": "ba",
+          "title": "Auto_Net_Algae",
           "type": "counter",
           "defaultValue": 0,
           "min": 0,
@@ -236,34 +134,139 @@
       ]
     },
     {
-      "name": "Endgame Tower",
+      "name": "Teleop",
       "fields": [
         {
-          "code": "ep",
-          "title": "End_Position",
-          "type": "select",
-          "choices": {
-            "notClimbed": "Not Climbed",
-            "l1": "L1",
-            "l2": "L2",
-            "l3": "L3",
-            "failed": "Failed"
-          },
-          "defaultValue": "notBlimbed",
+          "code": "tl1",
+          "title": "Teleop_Coral_L1",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "bgcolor": "bg-purple-300",
           "required": false
         },
         {
-          "code": "ttc",
-          "title": "Time_When_Climb_Initiated",
+          "code": "tl2",
+          "title": "Teleop_Coral_L2",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "bgcolor": "bg-purple-400",
+          "required": false
+        },
+        {
+          "code": "tl3",
+          "title": "Teleop_Coral_L3",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "bgcolor": "bg-purple-500",
+          "required": false
+        },
+        {
+          "code": "tam",
+          "title": "Teleop_Coral_L4",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "bgcolor": "bg-purple-600",
+          "required": false
+        },
+        {
+          "code": "coralIn",
+          "title": "Coral_Intake_Type",
+          "type": "select",
+          "choices": {
+            "source": "Source",
+            "ground": "Ground",
+            "both": "Both",
+            "none": "None"
+          },
+          "defaultValue": "source",
+          "required": false
+        },
+        {
+          "code": "litter",
+          "title": "Coral_Litter",
+          "type": "select",
+          "choices": {
+            "none": "None",
+            "1to2": "1-2",
+            "3to5": "3-5",
+            "moreThan5": "More Than 5"
+          },
+          "defaultValue": "none",
+          "required": false
+        },
+        {
+          "code": "tar",
+          "title": "Teleop_Removed_Algae",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "bgcolor": "bg-emerald-500",
+          "required": false
+        },
+        {
+          "code": "tap",
+          "title": "Teleop_Processed_Algae",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "bgcolor": "bg-emerald-500",
+          "required": false
+        },
+        {
+          "code": "tpa",
+          "title": "Teleop_Net_Algae",
+          "type": "counter",
+          "defaultValue": 0,
+          "min": 0,
+          "bgcolor": "bg-emerald-500",
+          "required": false
+        },
+        {
+          "code": "algaeIn",
+          "title": "Algae_Intake_Type",
+          "type": "select",
+          "choices": {
+            "reef": "Reef",
+            "ground": "Ground",
+            "both": "Both",
+            "none": "None"
+          },
+          "defaultValue": "none",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "Endgame Barge",
+      "fields": [
+        {
+          "code": "tep",
+          "title": "End_Position",
+          "type": "select",
+          "choices": {
+            "none": "None",
+            "parked": "Parked",
+            "shallow": "Shallow (High)",
+            "failShallow": "Shallow (High) failed",
+            "deep": "Deep (Low)",
+            "failDeep": "Deep (Low) failed"
+          },
+          "defaultValue": "none",
+          "required": false
+        },
+        {
+          "code": "cs",
+          "title": "Climb_Speed",
           "type": "select",
           "choices": {
             "didNotClimb": "Did not Climb",
-            "1-5": "1-5",
-            "6-10": "6-10",
-            "11-15": "11-15",
-            "16-20": "16-20",
-            "21-25": "21-25",
-            "26-30": "26-30"
+            "slow": "Slow (20-30 Sec.)",
+            "med": "Med (10-20 Sec.)",
+            "fast": "Fast (Under 10 Sec.)"
           },
           "defaultValue": "didNotClimb",
           "required": false
@@ -311,24 +314,19 @@
           },
           "defaultValue": "na",
           "required": false
+        },
+        {
+          "code": "toc",
+          "title": "Touched_Opponent_Cage",
+          "type": "boolean",
+          "defaultValue": false,
+          "required": false
         }
       ]
     },
     {
       "name": "Evaluation",
       "fields": [
-        {
-          "code": "hs",
-          "title": "Average_Hopper_Size_When_Scoring",
-          "type": "select",
-          "choices": {
-            "small(0-20)": "Small(0-20)",
-            "med(21-40)": "Med(21-40)",
-            "large(41+)": "Large(41+)"
-          },
-          "defaultValue": "small",
-          "required": false
-        },
         {
           "code": "ds",
           "title": "Driver_Skill",
