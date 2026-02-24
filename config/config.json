@@ -1,5 +1,5 @@
 {
-  "$schema": "./schema.json",
+  "$schema": "../schema.json",
   "title": "QRScout",
   "page_title": "4020 Scouting",
   "sections": [
