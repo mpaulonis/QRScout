@@ -12,6 +12,7 @@ export interface Config {
 export interface SectionProps {
   name: string
   preserveDataOnReset?: boolean
+  visibleWhen?: VisibleWhen
   fields: InputProps[]
 }
 
@@ -29,7 +30,20 @@ export interface InputProps {
   max?: number
   placeholder?: string
   rows?: number
+
+  visibleWhen?: VisibleWhen
 }
+
+export interface VisibleCondition {
+  code: string
+  equals?: any
+  notEquals?: any
+  in?: any[]
+  notIn?: any[]
+  truthy?: boolean
+}
+
+export type VisibleWhen = VisibleCondition | VisibleCondition[]
 
 export type InputTypes =
   | 'text'

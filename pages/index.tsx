@@ -52,16 +52,18 @@ export default function Home() {
     setFormData(currentData)
   }
 
-  function getMissingRequiredFields(): InputProps[] {
-    return formData.sections
-      .map((s) => s.fields)
-      .flat()
-      .filter(
-        (f) =>
-          f.required &&
-          (f.value === null || f.value === undefined || f.value === ``)
-      )
-  }
+function getMissingRequiredFields(): InputProps[] {
+  return formData.sections
+    .filter((s) => isSectionVisible(s))
+    .map((s) => s.fields)
+    .flat()
+    .filter((f) => isFieldVisible(f))
+    .filter(
+      (f) =>
+        f.required &&
+        (f.value === null || f.value === undefined || f.value === ``)
+    )
+}
 
   function getFieldValue(code: string): any {
     return formData.sections
@@ -69,6 +71,32 @@ export default function Home() {
       .flat()
       .find((f) => f.code === code)?.value
   }
+
+  function evalVisibleWhen(visibleWhen: any): boolean {
+  if (!visibleWhen) return true
+
+  const conditions = Array.isArray(visibleWhen) ? visibleWhen : [visibleWhen]
+
+  return conditions.every((c) => {
+    const actual = getFieldValue(c.code)
+
+    if (c.equals !== undefined) return actual === c.equals
+    if (c.notEquals !== undefined) return actual !== c.notEquals
+    if (c.in) return c.in.includes(actual)
+    if (c.notIn) return !c.notIn.includes(actual)
+    if (c.truthy !== undefined) return c.truthy ? !!actual : !actual
+
+    return true
+  })
+}
+
+function isFieldVisible(f: any): boolean {
+  return evalVisibleWhen(f.visibleWhen)
+}
+
+function isSectionVisible(s: any): boolean {
+  return evalVisibleWhen(s.visibleWhen)
+}
 
   function resetSections() {
     const currentData = { ...formData }
@@ -172,16 +200,16 @@ export default function Home() {
 
         <form>
         <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-            {formData.sections.map((section) => {
-              return (
+            {formData.sections
+              .filter((section) => isSectionVisible(section))
+              .map((section) => (
                 <Section
                   key={section.name}
                   name={section.name}
-                  inputs={section.fields}
+                  inputs={section.fields.filter((f) => isFieldVisible(f))}
                   onValueChanged={updateValue}
                 />
-              )
-            })}
+              ))}
 
             <div className="mb-4 flex flex-col justify-center rounded bg-white shadow-mdm">
               <button

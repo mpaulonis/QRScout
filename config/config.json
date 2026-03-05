@@ -55,11 +55,19 @@
           "defaultValue": "noShow",
           "required": false,
           "code": "autoStart"
+        },
+        {
+          "title": "Match Scouting?",
+          "type": "boolean",
+          "required": false,
+          "code": "toggleTest",
+          "defaultValue": false
         }
       ]
     },
     {
       "name": "Auto",
+      "visibleWhen": { "code": "toggleTest", "equals": true },
       "fields": [
         {
           "code": "aa",
@@ -113,6 +121,7 @@
     },
     {
       "name": "Teleop",
+      "visibleWhen": { "code": "toggleTest", "equals": true },
       "fields": [
         {
           "code": "tol",
@@ -202,6 +211,7 @@
     },
     {
       "name": "Endgame Tower",
+      "visibleWhen": { "code": "toggleTest", "equals": true },
       "fields": [
         {
           "code": "ep",
@@ -221,6 +231,7 @@
     },
     {
       "name": "Defense/Fouls",
+      "visibleWhen": { "code": "toggleTest", "equals": true },
       "fields": [
         {
           "code": "da",
@@ -265,6 +276,7 @@
     },
     {
       "name": "Evaluation",
+      "visibleWhen": { "code": "toggleTest", "equals": true },
       "fields": [
         {
           "code": "hs",
