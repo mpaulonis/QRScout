@@ -88,33 +88,6 @@
           "required": false
         },
         {
-          "code": "pm",
-          "title": "Picked_Up_Mid",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "bgcolor": "bg-purple-500",
-          "required": false
-        },
-        {
-          "code": "po",
-          "title": "Picked_Up_Outpost",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "bgcolor": "bg-purple-600",
-          "required": false
-        },
-        {
-          "code": "pd",
-          "title": "Picked_Up_Depot",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "bgcolor": "bg-purple-700",
-          "required": false
-        },
-        {
           "code": "c",
           "title": "Climbed",
           "type": "select",
@@ -154,23 +127,13 @@
           "required": false
         },
         {
-          "code": "ut",
-          "title": "Can_Go_Under_Trench",
-          "type": "select",
-          "choices": {
-            "yes": "Yes",
-            "no": "No"
-          },
-          "defaultValue": "no",
-          "required": false
-        },
-        {
           "code": "or",
           "title": "Can_go_over_Ramp",
           "type": "select",
           "choices": {
             "yes": "Yes",
-            "no": "No"
+            "no": "No",
+            "notAtempted": "Not_Attempted"
           },
           "defaultValue": "no",
           "required": false
@@ -192,11 +155,13 @@
         {
           "code": "tr",
           "title": "Teleop_Range",
-          "type": "range",
-           "min": 0,
-            "max": 10,
-            "step": 1,
-          "defaultValue": 5,
+          "type": "select",
+          "choices": {
+            "short": "Short",
+            "mid": "Mid",
+            "far": "Far"
+          },
+          "defaultValue": "Short",
           "required": false
         },
         {
@@ -249,23 +214,7 @@
             "l3": "L3",
             "failed": "Failed"
           },
-          "defaultValue": "notBlimbed",
-          "required": false
-        },
-        {
-          "code": "ttc",
-          "title": "Time_When_Climb_Initiated",
-          "type": "select",
-          "choices": {
-            "didNotClimb": "Did not Climb",
-            "1-5": "1-5",
-            "6-10": "6-10",
-            "11-15": "11-15",
-            "16-20": "16-20",
-            "21-25": "21-25",
-            "26-30": "26-30"
-          },
-          "defaultValue": "didNotClimb",
+          "defaultValue": " Not Climbed",
           "required": false
         }
       ]
