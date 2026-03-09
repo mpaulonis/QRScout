@@ -3,9 +3,45 @@
   "title": "QRScout",
   "page_title": "4020 Scouting",
   "sections": [
+
+    {
+      "name": "Match Scouting or Pit Scouting",
+      "preserveDataOnReset": false,
+      "fields":[
+        {
+          "title": "Match Scouting?",
+          "type": "boolean",
+          "required": false,
+          "code": "toggleTest",
+          "defaultValue": true
+        }
+      ]
+    },
+    { 
+      "name": "Pre-Pit Scouting",
+      "preserveDataOnReset": false,
+      "visibleWhen": { "code": "toggleTest", "equals": false},
+      "fields":[
+        {
+          "title": "Scouter_Initials",
+          "type": "text",
+          "required": true,
+          "rows": 1,
+          "code": "scouter"
+        },
+        {
+          "title": "Team_Number",
+          "type": "text",
+          "required": true,
+          "rows": 1,
+          "code": "teamNumber"
+        }
+      ]
+    },
     {
       "name": "Prematch",
       "preserveDataOnReset": false,
+      "visibleWhen": { "code": "toggleTest", "equals": true},
       "fields": [
         {
           "title": "Scouter_Initials",
@@ -27,6 +63,7 @@
           "required": true,
           "code": "allianceId",
           "choices": {
+            "default": "",
             "r1": "Red 1",
             "r2": "Red 2",
             "r3": "Red 3",
@@ -34,7 +71,7 @@
             "b2": "Blue 2",
             "b3": "Blue 3"
           },
-          "defaultValue": "r1"
+          "defaultValue": "default"
         },
         {
           "title": "Team_Number",
@@ -55,13 +92,6 @@
           "defaultValue": "noShow",
           "required": false,
           "code": "autoStart"
-        },
-        {
-          "title": "Match Scouting?",
-          "type": "boolean",
-          "required": false,
-          "code": "toggleTest",
-          "defaultValue": false
         }
       ]
     },
@@ -74,13 +104,14 @@
           "title": "Auto_Accuracy",
           "type": "select",
           "choices": {
-            "terrible": "Terrrible",
-            "bad": "Bad",
-            "mid": "Mid",
-            "great": "Great",
-            "awesome": "Awesome"
+            "0": "0%",
+            "25": "25%",
+            "50": "50%",
+            "75": "75%",
+            "100": "100%",
+            "default": ""
           },
-          "defaultValue": "terrible",
+          "defaultValue": "default",
           "required": false
         },
         {
@@ -90,9 +121,11 @@
           "choices": {
             "floor": "Floor",
             "outpost": "Outpost",
-            "both": "Both"
+            "both": "Both",
+            "none": "None",
+            "default": ""
           },
-          "defaultValue": "floor",
+          "defaultValue": "default",
           "required": false
         },
         {
@@ -102,8 +135,10 @@
           "choices": {
             "yes": "Yes",
             "no": "No",
-            "attempted": "Attempted"
+            "attempted": "Attempted",
+            "default": ""
           },
+          "defaultValue": "default",
           "required": false
         },
         {
@@ -112,9 +147,10 @@
           "type": "select",
           "choices": {
             "yes": "Yes",
-            "no": "No"
+            "no": "No",
+            "default": ""
           },
-          "defaultValue": "no",
+          "defaultValue": "default",
           "required": false
         }
       ]
@@ -130,9 +166,11 @@
           "choices": {
             "fast(1-3)": "Fast(1-3)",
             "med(4-6)": "Med(4-6)",
-            "slow(7+)": "Slow(7+)"
+            "slow(7+)": "Slow(7+)",
+            "notAtempted": "Not_Attempted",
+            "default": ""
           },
-          "defaultValue": "Fast(1-3)",
+          "defaultValue": "default",
           "required": false
         },
         {
@@ -142,9 +180,10 @@
           "choices": {
             "yes": "Yes",
             "no": "No",
-            "notAtempted": "Not_Attempted"
+            "notAtempted": "Not_Attempted",
+            "default": ""
           },
-          "defaultValue": "no",
+          "defaultValue": "default",
           "required": false
         },
         {
@@ -152,13 +191,14 @@
           "title": "Teleop_Accuracy",
           "type": "select",
           "choices": {
-            "terrible": "Terrrible",
-            "bad": "Bad",
-            "mid": "Mid",
-            "great": "Great",
-            "awesome": "Awesome"
+            "0": "0%",
+            "25": "25%",
+            "50": "50%",
+            "75": "75%",
+            "100": "100%",
+            "default": ""
           },
-          "defaultValue": "terrible",
+          "defaultValue": "default",
           "required": false
         },
         {
@@ -168,9 +208,11 @@
           "choices": {
             "short": "Short",
             "mid": "Mid",
-            "far": "Far"
+            "far": "Far",
+            "all": "All",
+            "default": ""
           },
-          "defaultValue": "Short",
+          "defaultValue": "default",
           "required": false
         },
         {
@@ -182,20 +224,35 @@
             "bad": "Bad",
             "mid": "Mid",
             "great": "Great",
-            "awesome": "Awesome"
+            "awesome": "Awesome",
+            "default": ""
           },
-          "defaultValue": "terrible",
+          "defaultValue": "default",
           "required": false
         },
         {
+            "code": "s",
+            "title": "Type_of_Shuttling",
+            "type": "select",
+            "choices": {
+              "shooting": "Shooting",
+              "push": "Push",
+              "noAttempt": "Not_Attempted",
+              "default": ""
+            },
+            "defaultValue": "default",
+            "required": false
+        },  
+        {
           "code": "afo",
-          "title": "Attempt_to_Fill_Outpost",
+          "title": "Attempt_to_Fill_Up_Outpost",
           "type": "select",
           "choices": {
             "yes": "Yes",
-            "no": "No"
+            "no": "No",
+            "default": ""
           },
-          "defaultValue": "no",
+          "defaultValue": "default",
           "required": false
         },
         {
@@ -222,9 +279,10 @@
             "l1": "L1",
             "l2": "L2",
             "l3": "L3",
-            "failed": "Failed"
+            "failed": "Failed",
+            "default": ""
           },
-          "defaultValue": " Not Climbed",
+          "defaultValue": "default",
           "required": false
         }
       ]
@@ -240,9 +298,10 @@
           "choices": {
             "little": "None or very little",
             "moderate": "Moderate amount",
-            "most": "Most of the time"
+            "most": "Most of the time",
+            "default": ""
           },
-          "defaultValue": "little",
+          "defaultValue": "default",
           "required": false
         },
         {
@@ -253,9 +312,10 @@
             "no": "No defense played",
             "poor": "Poor",
             "ok": "OK",
-            "great": "Excellent"
+            "great": "Excellent",
+            "default": ""
           },
-          "defaultValue": "no",
+          "defaultValue": "default",
           "required": false
         },
         {
@@ -285,9 +345,22 @@
           "choices": {
             "small(0-20)": "Small(0-20)",
             "med(21-40)": "Med(21-40)",
-            "large(41+)": "Large(41+)"
+            "large(41+)": "Large(41+)",
+            "default": ""
           },
-          "defaultValue": "small",
+          "defaultValue": "default",
+          "required": false
+        },
+        {
+          "code": "j",
+          "title": "Jamming",
+          "type": "select",
+          "choices": {
+            "yes": "Yes",
+            "no": "No",
+            "default": ""
+          },
+          "defaultValue": "default",
           "required": false
         },
         {
@@ -312,9 +385,10 @@
           "choices": {
             "no": "No",
             "yes": "Yes",
-            "temporarily": "Temporarily"
+            "temporarily": "Temporarily",
+            "default": ""
           },
-          "defaultValue": "no",
+          "defaultValue": "default",
           "required": false
         },
         {
