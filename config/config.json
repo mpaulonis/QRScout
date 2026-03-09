@@ -87,9 +87,10 @@
             "depot": "Depot",
             "middle": "Middle",
             "outpost": "Outpost",
-            "noShow": "No Show"
+            "noShow": "No Show",
+            "default": ""
           },
-          "defaultValue": "noShow",
+          "defaultValue": "default",
           "required": false,
           "code": "autoStart"
         }
