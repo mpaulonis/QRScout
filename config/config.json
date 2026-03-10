@@ -39,6 +39,26 @@
       ]
     },
     {
+      "name": "Pit Scouting",
+      "preserveDataOnReset": false, 
+      "visibleWhen": { "code": "toggleTest", "equals": false},
+            "fields":[
+        {
+          "code": "hp",
+          "title": "Hopper_Size",
+          "type": "select",
+          "choices": {
+            "small": "Small",
+            "med": "Med",
+            "large": "Large",
+            "default": ""
+          },
+          "defaultValue": "default",
+          "required": false
+        }
+      ]
+    },
+    {
       "name": "Prematch",
       "preserveDataOnReset": false,
       "visibleWhen": { "code": "toggleTest", "equals": true},
