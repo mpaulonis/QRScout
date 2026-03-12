@@ -162,6 +162,19 @@
           "defaultValue": "default",
           "required": false
         },
+          {
+          "code": "sn",
+          "title": "Speed_to_neutral_pile",
+          "type": "select",
+          "choices": {
+            "none": "Did_not_attempt",
+            "great": "Fast_(2_sec_or_less)",
+            "good": "Med_(3-4_sec)",
+            "decent": "Slow_(4+_sec)"
+          },
+          "defaultValue": "default",
+          "required": false
+        },
         {
           "code": "ha",
           "title": "Had_Advantage",
@@ -169,6 +182,19 @@
           "choices": {
             "yes": "Yes",
             "no": "No",
+            "default": ""
+          },
+          "defaultValue": "default",
+          "required": false
+        },
+        {
+          "code": "fp",
+          "title": "Fuel_pile_disruption",
+          "type": "select",
+          "choices": {
+            "bad": "Did_not_attempt",
+            "minor": "Minor",
+             "Major": "Major",
             "default": ""
           },
           "defaultValue": "default",
