@@ -23,14 +23,14 @@
       "visibleWhen": { "code": "toggleTest", "equals": false},
       "fields":[
         {
-          "title": "Scouter_Initials",
+          "title": "Scouter_Initials_Pre",
           "type": "text",
           "required": true,
           "rows": 1,
           "code": "scouter"
         },
         {
-          "title": "Team_Number",
+          "title": "Team_Number_Pre",
           "type": "text",
           "required": true,
           "rows": 1,
