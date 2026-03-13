@@ -9,7 +9,7 @@
       "preserveDataOnReset": false,
       "fields":[
         {
-          "title": "Match Scouting?",
+          "title": "Is_Match_Scouting",
           "type": "boolean",
           "required": false,
           "code": "toggleTest",
