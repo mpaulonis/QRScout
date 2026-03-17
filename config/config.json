@@ -121,15 +121,42 @@
       "visibleWhen": { "code": "toggleTest", "equals": true },
       "fields": [
         {
+          "code": "sn",
+          "title": "Speed_to_neutral_pile",
+          "type": "select",
+          "choices": {
+            "none": "Did not attempt",
+            "great": "Fast (2 sec or less)",
+            "good": "Med (3-4 sec)",
+            "decent": "Slow (4+ sec)",
+            "default": ""
+          },
+          "defaultValue": "default",
+          "required": false
+        },
+        {
+          "code": "fp",
+          "title": "Fuel_pile_disruption",
+          "type": "select",
+          "choices": {
+            "bad": "Did not attempt",
+            "minor": "Minor",
+            "Major": "Major",
+            "default": ""
+          },
+          "defaultValue": "default",
+          "required": false
+        },
+        {
           "code": "aa",
           "title": "Auto_Accuracy",
           "type": "select",
           "choices": {
-            "0": "0%",
-            "25": "25%",
-            "50": "50%",
-            "75": "75%",
-            "100": "100%",
+            "na": "No shooting",
+            "verylow": "<50%",
+            "low": "50-75%",
+            "med": "75-90%",
+            "high": "90-100%",
             "default": ""
           },
           "defaultValue": "default",
@@ -156,45 +183,18 @@
           "choices": {
             "yes": "Yes",
             "no": "No",
-            "attempted": "Attempted",
-            "default": ""
+            "failed": "Failed"
           },
-          "defaultValue": "default",
-          "required": false
-        },
-          {
-          "code": "sn",
-          "title": "Speed_to_neutral_pile",
-          "type": "select",
-          "choices": {
-            "none": "Did_not_attempt",
-            "great": "Fast_(2_sec_or_less)",
-            "good": "Med_(3-4_sec)",
-            "decent": "Slow_(4+_sec)"
-          },
-          "defaultValue": "default",
+          "defaultValue": "no",
           "required": false
         },
         {
           "code": "ha",
-          "title": "Had_Advantage",
+          "title": "Got_Advantage",
           "type": "select",
           "choices": {
             "yes": "Yes",
             "no": "No",
-            "default": ""
-          },
-          "defaultValue": "default",
-          "required": false
-        },
-        {
-          "code": "fp",
-          "title": "Fuel_pile_disruption",
-          "type": "select",
-          "choices": {
-            "bad": "Did_not_attempt",
-            "minor": "Minor",
-             "Major": "Major",
             "default": ""
           },
           "defaultValue": "default",
@@ -207,27 +207,14 @@
       "visibleWhen": { "code": "toggleTest", "equals": true },
       "fields": [
         {
-          "code": "tol",
-          "title": "Time_to_get_off_Latter",
-          "type": "select",
-          "choices": {
-            "fast(1-3)": "Fast(1-3)",
-            "med(4-6)": "Med(4-6)",
-            "slow(7+)": "Slow(7+)",
-            "notAtempted": "Not_Attempted",
-            "default": ""
-          },
-          "defaultValue": "default",
-          "required": false
-        },
-        {
           "code": "or",
-          "title": "Can_go_over_Ramp",
+          "title": "Path_To_Neutral",
           "type": "select",
           "choices": {
-            "yes": "Yes",
-            "no": "No",
-            "notAtempted": "Not_Attempted",
+            "bump": "Bump",
+            "trench": "Trench",
+            "both": "Both",
+            "notAtempted": "Not attempted",
             "default": ""
           },
           "defaultValue": "default",
@@ -238,11 +225,11 @@
           "title": "Teleop_Accuracy",
           "type": "select",
           "choices": {
-            "0": "0%",
-            "25": "25%",
-            "50": "50%",
-            "75": "75%",
-            "100": "100%",
+            "na": "No shooting",
+            "verylow": "<50%",
+            "low": "50-75%",
+            "med": "75-90%",
+            "high": "90-100%",
             "default": ""
           },
           "defaultValue": "default",
@@ -267,11 +254,10 @@
           "title": "Intake_Effectiveness",
           "type": "select",
           "choices": {
-            "terrible": "Terrrible",
+            "none": "None",
             "bad": "Bad",
-            "mid": "Mid",
+            "avg": "Average",
             "great": "Great",
-            "awesome": "Awesome",
             "default": ""
           },
           "defaultValue": "default",
@@ -282,25 +268,14 @@
             "title": "Type_of_Shuttling",
             "type": "select",
             "choices": {
-              "shooting": "Shooting",
               "push": "Push",
-              "noAttempt": "Not_Attempted",
+              "shoot": "Shoot",
+              "both": "Both",
+              "none": "None",
               "default": ""
             },
             "defaultValue": "default",
             "required": false
-        },  
-        {
-          "code": "afo",
-          "title": "Attempt_to_Fill_Up_Outpost",
-          "type": "select",
-          "choices": {
-            "yes": "Yes",
-            "no": "No",
-            "default": ""
-          },
-          "defaultValue": "default",
-          "required": false
         },
         {
           "code": "hc",
@@ -326,10 +301,9 @@
             "l1": "L1",
             "l2": "L2",
             "l3": "L3",
-            "failed": "Failed",
-            "default": ""
+            "failed": "Failed"
           },
-          "defaultValue": "default",
+          "defaultValue": "notClimbed",
           "required": false
         }
       ]
@@ -390,9 +364,9 @@
           "title": "Average_Hopper_Size_When_Scoring",
           "type": "select",
           "choices": {
-            "small(0-20)": "Small(0-20)",
-            "med(21-40)": "Med(21-40)",
-            "large(41+)": "Large(41+)",
+            "small(0-20)": "Small (0-20)",
+            "med(21-40)": "Med (21-40)",
+            "large(41+)": "Large (41+)",
             "default": ""
           },
           "defaultValue": "default",
@@ -400,11 +374,13 @@
         },
         {
           "code": "j",
-          "title": "Jamming",
+          "title": "Shooting_Smoothness",
           "type": "select",
           "choices": {
-            "yes": "Yes",
-            "no": "No",
+            "smooth": "Smooth",
+            "ok": "Slightly choppy",
+            "bad": "Very choppy / jamming",
+            "na": "No shooting",
             "default": ""
           },
           "defaultValue": "default",
@@ -436,13 +412,6 @@
             "default": ""
           },
           "defaultValue": "default",
-          "required": false
-        },
-        {
-          "code": "to",
-          "title": "Tipped_Over",
-          "type": "boolean",
-          "defaultValue": false,
           "required": false
         },
         {
