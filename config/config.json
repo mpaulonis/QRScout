@@ -139,7 +139,7 @@
           "title": "Fuel_pile_disruption",
           "type": "select",
           "choices": {
-            "bad": "Did not attempt",
+            "DNA": "Did not attempt",
             "minor": "Minor",
             "Major": "Major",
             "default": " "
