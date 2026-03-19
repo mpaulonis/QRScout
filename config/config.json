@@ -51,7 +51,7 @@
             "small": "Small",
             "med": "Med",
             "large": "Large",
-            "default": ""
+            "default": " "
           },
           "defaultValue": "default",
           "required": false
@@ -83,7 +83,7 @@
           "required": true,
           "code": "allianceId",
           "choices": {
-            "default": "",
+            "default": " ",
             "r1": "Red 1",
             "r2": "Red 2",
             "r3": "Red 3",
@@ -108,7 +108,7 @@
             "middle": "Middle",
             "outpost": "Outpost",
             "noShow": "No Show",
-            "default": ""
+            "default": " "
           },
           "defaultValue": "default",
           "required": false,
@@ -129,7 +129,7 @@
             "great": "Fast (2 sec or less)",
             "good": "Med (3-4 sec)",
             "decent": "Slow (4+ sec)",
-            "default": ""
+            "default": " "
           },
           "defaultValue": "default",
           "required": false
@@ -142,7 +142,7 @@
             "bad": "Did not attempt",
             "minor": "Minor",
             "Major": "Major",
-            "default": ""
+            "default": " "
           },
           "defaultValue": "default",
           "required": false
@@ -157,7 +157,7 @@
             "low": "50-75%",
             "med": "75-90%",
             "high": "90-100%",
-            "default": ""
+            "default": " "
           },
           "defaultValue": "default",
           "required": false
@@ -171,7 +171,7 @@
             "outpost": "Outpost",
             "both": "Both",
             "none": "None",
-            "default": ""
+            "default": " "
           },
           "defaultValue": "default",
           "required": false
@@ -195,7 +195,7 @@
           "choices": {
             "yes": "Yes",
             "no": "No",
-            "default": ""
+            "default": " "
           },
           "defaultValue": "default",
           "required": false
@@ -215,7 +215,7 @@
             "trench": "Trench",
             "both": "Both",
             "notAtempted": "Not attempted",
-            "default": ""
+            "default": " "
           },
           "defaultValue": "default",
           "required": false
@@ -230,7 +230,7 @@
             "low": "50-75%",
             "med": "75-90%",
             "high": "90-100%",
-            "default": ""
+            "default": " "
           },
           "defaultValue": "default",
           "required": false
@@ -244,7 +244,7 @@
             "mid": "Mid",
             "far": "Far",
             "all": "All",
-            "default": ""
+            "default": " "
           },
           "defaultValue": "default",
           "required": false
@@ -258,7 +258,7 @@
             "bad": "Bad",
             "avg": "Average",
             "great": "Great",
-            "default": ""
+            "default": " "
           },
           "defaultValue": "default",
           "required": false
@@ -272,7 +272,7 @@
               "shoot": "Shoot",
               "both": "Both",
               "none": "None",
-              "default": ""
+              "default": " "
             },
             "defaultValue": "default",
             "required": false
@@ -320,7 +320,7 @@
             "little": "None or very little",
             "moderate": "Moderate amount",
             "most": "Most of the time",
-            "default": ""
+            "default": " "
           },
           "defaultValue": "default",
           "required": false
@@ -334,7 +334,7 @@
             "poor": "Poor",
             "ok": "OK",
             "great": "Excellent",
-            "default": ""
+            "default": " "
           },
           "defaultValue": "default",
           "required": false
@@ -367,7 +367,7 @@
             "small(0-20)": "Small (0-20)",
             "med(21-40)": "Med (21-40)",
             "large(41+)": "Large (41+)",
-            "default": ""
+            "default": " "
           },
           "defaultValue": "default",
           "required": false
@@ -381,7 +381,7 @@
             "ok": "Slightly choppy",
             "bad": "Very choppy / jamming",
             "na": "No shooting",
-            "default": ""
+            "default": " "
           },
           "defaultValue": "default",
           "required": false
@@ -409,7 +409,7 @@
             "no": "No",
             "yes": "Yes",
             "temporarily": "Temporarily",
-            "default": ""
+            "default": " "
           },
           "defaultValue": "default",
           "required": false
