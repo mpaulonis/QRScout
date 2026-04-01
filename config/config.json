@@ -19,7 +19,7 @@
     },
     { 
       "name": "Pre-Pit Scouting",
-      "preserveDataOnReset": false,
+      "preserveDataOnReset": true,
       "visibleWhen": { "code": "toggleTest", "equals": false},
       "fields":[
         {
@@ -43,24 +43,11 @@
       "preserveDataOnReset": false, 
       "visibleWhen": { "code": "toggleTest", "equals": false},
             "fields":[
-        {
-          "code": "hp",
-          "title": "Hopper_Size",
-          "type": "select",
-          "choices": {
-            "small": "Small",
-            "med": "Med",
-            "large": "Large",
-            "default": " "
-          },
-          "defaultValue": "default",
-          "required": false
-        }
       ]
     },
     {
       "name": "Prematch",
-      "preserveDataOnReset": false,
+      "preserveDataOnReset": true,
       "visibleWhen": { "code": "toggleTest", "equals": true},
       "fields": [
         {
@@ -121,56 +108,15 @@
       "visibleWhen": { "code": "toggleTest", "equals": true },
       "fields": [
         {
-          "code": "sn",
-          "title": "Speed_to_neutral_pile",
-          "type": "select",
-          "choices": {
-            "none": "Did not attempt",
-            "great": "Fast (2 sec or less)",
-            "good": "Med (3-4 sec)",
-            "decent": "Slow (4+ sec)",
-            "default": " "
-          },
-          "defaultValue": "default",
-          "required": false
-        },
-        {
-          "code": "fp",
-          "title": "Fuel_pile_disruption",
-          "type": "select",
-          "choices": {
-            "DNA": "Did not attempt",
-            "minor": "Minor",
-            "Major": "Major",
-            "default": " "
-          },
-          "defaultValue": "default",
-          "required": false
-        },
-        {
           "code": "aa",
-          "title": "Auto_Accuracy",
+          "title": "Auto_Fuel_Accuracy",
           "type": "select",
           "choices": {
-            "na": "No shooting",
-            "verylow": "<50%",
-            "low": "50-75%",
-            "med": "75-90%",
-            "high": "90-100%",
-            "default": " "
-          },
-          "defaultValue": "default",
-          "required": false
-        },
-        {
-          "code": "ti",
-          "title": "Type_Of_Intake",
-          "type": "select",
-          "choices": {
-            "floor": "Floor",
-            "outpost": "Outpost",
-            "both": "Both",
-            "none": "None",
+            "na": "0 shots made",
+            "verylow": "2 shots made",
+            "low": "4 shots made",
+            "med": "6 shots made",
+            "high": "8+ shots made",
             "default": " "
           },
           "defaultValue": "default",
@@ -187,18 +133,6 @@
           },
           "defaultValue": "no",
           "required": false
-        },
-        {
-          "code": "ha",
-          "title": "Got_Advantage",
-          "type": "select",
-          "choices": {
-            "yes": "Yes",
-            "no": "No",
-            "default": " "
-          },
-          "defaultValue": "default",
-          "required": false
         }
       ]
     },
@@ -207,43 +141,15 @@
       "visibleWhen": { "code": "toggleTest", "equals": true },
       "fields": [
         {
-          "code": "or",
-          "title": "Path_To_Neutral",
-          "type": "select",
-          "choices": {
-            "bump": "Bump",
-            "trench": "Trench",
-            "both": "Both",
-            "notAtempted": "Not attempted",
-            "default": " "
-          },
-          "defaultValue": "default",
-          "required": false
-        },
-        {
           "code": "ta",
           "title": "Teleop_Accuracy",
           "type": "select",
           "choices": {
-            "na": "No shooting",
-            "verylow": "<50%",
-            "low": "50-75%",
-            "med": "75-90%",
-            "high": "90-100%",
-            "default": " "
-          },
-          "defaultValue": "default",
-          "required": false
-        },
-        {
-          "code": "tr",
-          "title": "Teleop_Range",
-          "type": "select",
-          "choices": {
-            "short": "Short",
-            "mid": "Mid",
-            "far": "Far",
-            "all": "All",
+            "na": "No shooting attempted (0*)",
+            "verylow": "<50% (1*)",
+            "low": "50-75% (2*)",
+            "med": "75-90% (3*)",
+            "high": "90-100% (4*)",
             "default": " "
           },
           "defaultValue": "default",
@@ -251,59 +157,16 @@
         },
         {
           "code": "ie",
-          "title": "Intake_Effectiveness",
+          "title": "Shuttling_Effectiveness",
           "type": "select",
           "choices": {
-            "none": "None",
-            "bad": "Bad",
-            "avg": "Average",
-            "great": "Great",
+            "none": "None (0*)",
+            "bad": "Bad (1*)",
+            "avg": "Average (2*)",
+            "great": "Great (3*)",
             "default": " "
           },
           "defaultValue": "default",
-          "required": false
-        },
-        {
-            "code": "s",
-            "title": "Type_of_Shuttling",
-            "type": "select",
-            "choices": {
-              "push": "Push",
-              "shoot": "Shoot",
-              "both": "Both",
-              "none": "None",
-              "default": " "
-            },
-            "defaultValue": "default",
-            "required": false
-        },
-        {
-          "code": "hc",
-          "title": "Hopper_Cycles",
-          "type": "counter",
-          "defaultValue": 0,
-          "min": 0,
-          "bgcolor": "bg-emerald-500",
-          "required": false
-        }
-      ]
-    },
-    {
-      "name": "Endgame Tower",
-      "visibleWhen": { "code": "toggleTest", "equals": true },
-      "fields": [
-        {
-          "code": "ep",
-          "title": "End_Position",
-          "type": "select",
-          "choices": {
-            "notClimbed": "Not Climbed",
-            "l1": "L1",
-            "l2": "L2",
-            "l3": "L3",
-            "failed": "Failed"
-          },
-          "defaultValue": "notClimbed",
           "required": false
         }
       ]
@@ -313,27 +176,14 @@
       "visibleWhen": { "code": "toggleTest", "equals": true },
       "fields": [
         {
-          "code": "da",
-          "title": "Defense_Amount",
-          "type": "select",
-          "choices": {
-            "little": "None or very little",
-            "moderate": "Moderate amount",
-            "most": "Most of the time",
-            "default": " "
-          },
-          "defaultValue": "default",
-          "required": false
-        },
-        {
           "code": "de",
           "title": "Defense_Effectiveness",
           "type": "select",
           "choices": {
-            "no": "No defense played",
-            "poor": "Poor",
-            "ok": "OK",
-            "great": "Excellent",
+            "none": "None (0*)",
+            "bad": "Bad (1*)",
+            "avg": "Average (2*)",
+            "great": "Great (3*)",
             "default": " "
           },
           "defaultValue": "default",
@@ -360,55 +210,46 @@
       "visibleWhen": { "code": "toggleTest", "equals": true },
       "fields": [
         {
-          "code": "hs",
-          "title": "Average_Hopper_Size_When_Scoring",
-          "type": "select",
-          "choices": {
-            "small(0-20)": "Small (0-20)",
-            "med(21-40)": "Med (21-40)",
-            "large(41+)": "Large (41+)",
-            "default": " "
-          },
-          "defaultValue": "default",
-          "required": false
-        },
-        {
-          "code": "j",
-          "title": "Shooting_Smoothness",
-          "type": "select",
-          "choices": {
-            "smooth": "Smooth",
-            "ok": "Slightly choppy",
-            "bad": "Very choppy / jamming",
-            "na": "No shooting",
-            "default": " "
-          },
-          "defaultValue": "default",
-          "required": false
-        },
-        {
           "code": "ds",
           "title": "Driver_Skill",
           "type": "select",
           "choices": {
             "na": "Not Noticed",
-            "hindrance": "Hindrance",
-            "poor": "Poor",
-            "fair": "Fair",
-            "good": "Mostly good",
-            "great": "Very good"
+            "hindrance": "Hindrance (0*)",
+            "poor": "Poor (1*)",
+            "fair": "Fair (2*)",
+            "good": "Mostly good (3*)",
+            "great": "Very good (4*)"
           },
           "defaultValue": "na",
           "required": false
         },
         {
           "code": "rd",
-          "title": "Robot_Died",
+          "title": "Robot_Reliability",
           "type": "select",
           "choices": {
-            "no": "No",
-            "yes": "Yes",
-            "temporarily": "Temporarily",
+            "na": "Not Noticed",
+            "unreliable": "Unreliable/Died (0*)",
+            "someIssues": "Some issues (1*)",
+            "mostlyReliable": "Mostly reliable (2*)",
+            "reliable": "Reliable (3*)",
+            "veryReliable": "Very reliable (4*)",
+            "default": " "
+          },
+          "defaultValue": "default",
+          "required": false
+        },
+        {
+          "code": "sp",
+          "title": "Robot_Speed",
+          "type": "select",
+          "choices": {
+            "na": "Not Noticed",
+            "slow": "Slow (1*)",
+            "average": "Average (2*)",
+            "fast": "Fast (3*)",
+            "veryFast": "Very Fast (4*)",
             "default": " "
           },
           "defaultValue": "default",
