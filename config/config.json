@@ -109,14 +109,14 @@
       "fields": [
         {
           "code": "aa",
-          "title": "Auto_Fuel_Accuracy",
+          "title": "Auto_Fuel_Scored",
           "type": "select",
           "choices": {
-            "na": "0 shots made",
-            "verylow": "2 shots made",
-            "low": "4 shots made",
-            "med": "6 shots made",
-            "high": "8+ shots made",
+            "0": "0 shots made",
+            "2": "2 shots made",
+            "4": "4 shots made",
+            "6": "6 shots made",
+            "10": "8+ shots made",
             "default": " "
           },
           "defaultValue": "default",
@@ -145,11 +145,11 @@
           "title": "Teleop_Accuracy",
           "type": "select",
           "choices": {
-            "na": "No shooting attempted (0*)",
-            "verylow": "<50% (1*)",
-            "low": "50-75% (2*)",
-            "med": "75-90% (3*)",
-            "high": "90-100% (4*)",
+            "0": "No shooting attempted (0*)",
+            "1": "<50% (1*)",
+            "2": "50-75% (2*)",
+            "3": "75-90% (3*)",
+            "4": "90-100% (4*)",
             "default": " "
           },
           "defaultValue": "default",
@@ -160,10 +160,10 @@
           "title": "Shuttling_Effectiveness",
           "type": "select",
           "choices": {
-            "none": "None (0*)",
-            "bad": "Bad (1*)",
-            "avg": "Average (2*)",
-            "great": "Great (3*)",
+            "0": "None (0*)",
+            "1": "Bad (1*)",
+            "2": "Average (2*)",
+            "3": "Great (3*)",
             "default": " "
           },
           "defaultValue": "default",
@@ -180,10 +180,10 @@
           "title": "Defense_Effectiveness",
           "type": "select",
           "choices": {
-            "none": "None (0*)",
-            "bad": "Bad (1*)",
-            "avg": "Average (2*)",
-            "great": "Great (3*)",
+            "0": "None (0*)",
+            "1": "Bad (1*)",
+            "2": "Average (2*)",
+            "3": "Great (3*)",
             "default": " "
           },
           "defaultValue": "default",
@@ -195,10 +195,10 @@
           "type": "select",
           "choices": {
             "na": "Forgot to notice",
-            "clean": "None noticed - clean",
-            "1or2": "1 or 2 regular fouls",
-            "multiple": "Tech foul or multiple regular",
-            "aLot": "Fouling machine!"
+            "0": "None noticed - clean",
+            "1": "1 or 2 regular fouls",
+            "2": "Tech foul or multiple regular",
+            "3": "Fouling machine!"
           },
           "defaultValue": "na",
           "required": false
@@ -215,11 +215,11 @@
           "type": "select",
           "choices": {
             "na": "Not Noticed",
-            "hindrance": "Hindrance (0*)",
-            "poor": "Poor (1*)",
-            "fair": "Fair (2*)",
-            "good": "Mostly good (3*)",
-            "great": "Very good (4*)"
+            "0": "Hindrance (0*)",
+            "1": "Poor (1*)",
+            "2": "Fair (2*)",
+            "3": "Mostly good (3*)",
+            "4": "Very good (4*)"
           },
           "defaultValue": "na",
           "required": false
@@ -230,11 +230,11 @@
           "type": "select",
           "choices": {
             "na": "Not Noticed",
-            "unreliable": "Unreliable/Died (0*)",
-            "someIssues": "Some issues (1*)",
-            "mostlyReliable": "Mostly reliable (2*)",
-            "reliable": "Reliable (3*)",
-            "veryReliable": "Very reliable (4*)",
+            "0": "Unreliable/Died (0*)",
+            "1": "Some issues (1*)",
+            "2": "Mostly reliable (2*)",
+            "3": "Reliable (3*)",
+            "4": "Very reliable (4*)",
             "default": " "
           },
           "defaultValue": "default",
@@ -246,10 +246,10 @@
           "type": "select",
           "choices": {
             "na": "Not Noticed",
-            "slow": "Slow (1*)",
-            "average": "Average (2*)",
-            "fast": "Fast (3*)",
-            "veryFast": "Very Fast (4*)",
+            "1": "Slow (1*)",
+            "2": "Average (2*)",
+            "3": "Fast (3*)",
+            "4": "Very Fast (4*)",
             "default": " "
           },
           "defaultValue": "default",
@@ -261,7 +261,7 @@
           "type": "text",
           "required": false,
           "rows": 3,
-          "placeholder": "What was noteworthy or unusual about this performance? (defense, penalties, reliablity, etc.)"
+          "placeholder": "Where did they go in auto, any comments about defense, other things that would help in picking or not picking this robot?"
         }
       ]
     }
