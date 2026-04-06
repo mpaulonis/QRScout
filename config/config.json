@@ -195,10 +195,10 @@
           "type": "select",
           "choices": {
             "na": "Forgot to notice",
-            "0": "None noticed - clean",
-            "1": "1 or 2 regular fouls",
-            "2": "Tech foul or multiple regular",
-            "3": "Fouling machine!"
+            "3": "None noticed - clean (3*)",
+            "2": "1 or 2 regular fouls (2*)",
+            "1": "Tech foul or multiple regular (1*)",
+            "0": "Fouling machine! (0*)"
           },
           "defaultValue": "na",
           "required": false
